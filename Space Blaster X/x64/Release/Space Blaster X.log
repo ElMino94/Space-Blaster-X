@@ -1,38 +1,7 @@
 ﻿  caca.cpp
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\caca.cpp(82,42): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\caca.cpp(85,56): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\caca.cpp(85,42): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\caca.cpp(88,46): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\caca.cpp(91,56): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\caca.cpp(91,33): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\caca.cpp(331,47): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
   Génération de code en cours
-  0 of 285 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  3 of 4 functions (75.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
-  Space Blaster X.vcxproj -> C:\Users\trestoux\source\repos\Space Blaster X\x64\Release\Space Blaster X.exe
+  Space Blaster X.vcxproj -> C:\Users\Téo\Desktop\GTech\Space-Blaster-X\x64\Release\Space Blaster X.exe
