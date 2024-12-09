@@ -1,14 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\trestoux\\source\\repos\\Space Blaster X\\",
+  "WorkspaceRootPath": "C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|C:\\Users\\trestoux\\source\\repos\\Space Blaster X\\Space Blaster X\\caca.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\caca.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|solutionrelative:Space Blaster X\\caca.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\trestoux\\source\\repos\\Space Blaster X\\Space Blaster X\\Nouveau document texte.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Space Blaster X\\Nouveau document texte.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +14,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Nouveau document texte.txt",
-              "DocumentMoniker": "C:\\Users\\trestoux\\source\\repos\\Space Blaster X\\Space Blaster X\\Nouveau document texte.txt",
-              "RelativeDocumentMoniker": "Space Blaster X\\Nouveau document texte.txt",
-              "ToolTip": "C:\\Users\\trestoux\\source\\repos\\Space Blaster X\\Space Blaster X\\Nouveau document texte.txt",
-              "RelativeToolTip": "Space Blaster X\\Nouveau document texte.txt",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAABQAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-12-08T12:36:43.291Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "caca.cpp",
-              "DocumentMoniker": "C:\\Users\\trestoux\\source\\repos\\Space Blaster X\\Space Blaster X\\caca.cpp",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\caca.cpp",
               "RelativeDocumentMoniker": "Space Blaster X\\caca.cpp",
-              "ToolTip": "C:\\Users\\trestoux\\source\\repos\\Space Blaster X\\Space Blaster X\\caca.cpp",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\caca.cpp",
               "RelativeToolTip": "Space Blaster X\\caca.cpp",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAB0AAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-03T14:30:52.162Z",
               "EditorCaption": ""
