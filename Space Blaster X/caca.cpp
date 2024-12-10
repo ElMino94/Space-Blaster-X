@@ -22,8 +22,43 @@ public:
 };
 
 int main() {
-    // Création de la fenêtre
-    RenderWindow window(VideoMode(1920, 1080), "Fenêtre SFML");
+    
+    Texture ifmTexture;
+    Texture bmTexture;
+    Texture vb1Texture;
+    Texture vb2Texture;
+    Texture vb3Texture;
+    Texture ve1Texture;
+    Texture ve2Texture;
+    Texture ve3Texture;
+    Texture vpTexture;
+    Texture i1Texutre;
+    Texture i2Texutre;
+    Texture i3Texutre;
+
+    ifmTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
+    bmTexture.loadFromFile("assetocorsa\\bouton-de-jeu");
+    vb1Texture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
+    vb2Texture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
+    vb3Texture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
+    ifmTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
+    ifmTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
+    ifmTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
+    ifmTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
+    ifmTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
+    ifmTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
+    ifmTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
+
+
+    
+    RenderWindow window(VideoMode(1920, 1080), "Space Blaster X");
+
+
+
+
+
+
+
 
     // Création d'un cercle
     CircleShape shape(50); // Rayon de 50 pixels
