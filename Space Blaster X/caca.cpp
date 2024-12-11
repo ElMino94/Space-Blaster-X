@@ -26,7 +26,7 @@ int main() {
     RenderWindow window(VideoMode(1920, 1080), "Fenêtre SFML");
 
     // Création d'un cercle
-    CircleShape shape(50); // Rayon de 50 pixels
+    CircleShape shape(500); // Rayon de 50 pixels
     shape.setFillColor(sf::Color::Green);
 
     // Boucle principale
