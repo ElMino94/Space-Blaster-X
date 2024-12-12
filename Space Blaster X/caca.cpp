@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include "player.h"
 using namespace std;
 using namespace sf;
 
@@ -7,7 +8,8 @@ using namespace sf;
 
 
 int main() {
-    
+    Player player(400.f, 300.f);
+    sf::Clock clock;
     Texture ifmTexture;
     Texture bpTexture;
     Texture vb1Texture;
@@ -34,7 +36,7 @@ int main() {
     ifmTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
     ifmTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
 
-    RenderWindow window(VideoMode(1920, 1080), "Space Blaster X");
+    RenderWindow window(VideoMode(1920, 1080), "Space Blaster X", Style::None);
     window.setFramerateLimit(9999999999999999999);
 
     Sprite ifmSprite(ifmTexture);
@@ -48,14 +50,16 @@ int main() {
 
 
     while (window.isOpen()) {
+        sf::Time deltaTime = clock.restart();
         Event event;
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed)
                 window.close(); // Fermer la fenêtre
         }
-
+        player.update(deltaTime.asSeconds());
         window.draw(ifmSprite);
         window.draw(bpSprite);
+        window.draw(player.ship);
         window.display();
     }
 
