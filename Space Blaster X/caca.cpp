@@ -24,7 +24,7 @@ public:
 int main() {
     
     Texture ifmTexture;
-    Texture bmTexture;
+    Texture bpTexture;
     Texture vb1Texture;
     Texture vb2Texture;
     Texture vb3Texture;
@@ -37,7 +37,7 @@ int main() {
     Texture i3Texutre;
 
     ifmTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
-    bmTexture.loadFromFile("assetocorsa\\bouton-de-jeu");
+    bpTexture.loadFromFile("assetocorsa\\bouton-play");
     vb1Texture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
     vb2Texture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
     vb3Texture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
@@ -49,22 +49,19 @@ int main() {
     ifmTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
     ifmTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
 
-
-    
     RenderWindow window(VideoMode(1920, 1080), "Space Blaster X");
+    window.setFramerateLimit(9999999999999999999);
+
+    Sprite ifmSprite(ifmTexture);
+    ifmSprite.setPosition(0, 0);
+
+    Sprite bpSprite(bpTexture);
+    bpSprite.setPosition(10, 10);
 
 
 
 
 
-
-
-
-    // Création d'un cercle
-    CircleShape shape(500); // Rayon de 50 pixels
-    shape.setFillColor(sf::Color::Green);
-
-    // Boucle principale
     while (window.isOpen()) {
         Event event;
         while (window.pollEvent(event)) {
@@ -72,11 +69,8 @@ int main() {
                 window.close(); // Fermer la fenêtre
         }
 
-        // Effacer la fenêtre
-        window.clear();
-        // Dessiner la forme
-        window.draw(shape);
-        // Afficher le contenu
+        window.draw(ifmSprite);
+        window.draw(bpSprite);
         window.display();
     }
 
