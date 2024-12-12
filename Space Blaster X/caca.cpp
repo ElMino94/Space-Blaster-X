@@ -37,7 +37,7 @@ int main() {
     Texture i3Texutre;
 
     ifmTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
-    bpTexture.loadFromFile("assetocorsa\\bouton-play");
+    bpTexture.loadFromFile("assetocorsa\\bouton-de-jeu.png");
     vb1Texture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
     vb2Texture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
     vb3Texture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
@@ -56,7 +56,7 @@ int main() {
     ifmSprite.setPosition(0, 0);
 
     Sprite bpSprite(bpTexture);
-    bpSprite.setPosition(10, 10);
+    bpSprite.setPosition(1000, 500);
 
 
 
