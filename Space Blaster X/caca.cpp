@@ -2,24 +2,9 @@
 using namespace std;
 using namespace sf;
 
-class Player
-{
-private:
 
-    float x;
-    float y;
-    int pv;
-    bool invincible;
 
-public:
-    Player(float X, float Y, int Pv, bool Invincible) {
-        x = X;
-        y = Y;
-        pv = Pv;
-        invincible = Invincible;
-    }
 
-};
 
 int main() {
     
