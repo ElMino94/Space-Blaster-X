@@ -1,6 +1,6 @@
 #pragma once
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef MOB_H
+#define MOB_H
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
@@ -24,7 +24,7 @@ public:
     void move(int dx, int dy);
     bool takedmg(int degat);
 
-    void attack();
+    virtual void attack();
     virtual void update(float deltaTime);
 
     sf::CircleShape ship;

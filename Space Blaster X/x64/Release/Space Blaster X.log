@@ -1,11 +1,9 @@
 ﻿  caca.cpp
-C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\caca.cpp(36,30): warning C4305: 'argument' : troncation de 'unsigned __int64' à 'unsigned int'
-C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\caca.cpp(36,30): warning C4309: 'argument' : troncation de valeur de constante
-  mob.cpp
-  player.cpp
+C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\caca.cpp(43,30): warning C4305: 'argument' : troncation de 'unsigned __int64' à 'unsigned int'
+C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\caca.cpp(43,30): warning C4309: 'argument' : troncation de valeur de constante
 x64\Release\player.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
   Génération de code en cours
-  2 of 86 functions ( 2.3%) were compiled, the rest were copied from previous compilation.
+  1 of 87 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code

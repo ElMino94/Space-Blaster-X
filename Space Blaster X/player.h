@@ -21,7 +21,7 @@ public:
     ~Player() = default;
 
     bool isalive();
-    void move(int dx, int dy);
+    void move(float deltaTime);
     bool takedmg(int degat);
 
     void attack();

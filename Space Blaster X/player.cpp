@@ -15,11 +15,7 @@ Player::Player(float x, float y){
 }
 
 bool Player::isalive(){}
-void Player::move(int dx, int dy) {}
-bool Player::takedmg(int degat) {}
-
-void Player::attack() {}
-void Player::update(float deltaTime) {
+void Player::move(float deltaTime) {
     sf::Vector2f direction(0.f, 0.f);
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
@@ -41,5 +37,14 @@ void Player::update(float deltaTime) {
     position += velocity * deltaTime;
 
     ship.setPosition(position);
+}
+bool Player::takedmg(int degat) {}
+
+void Player::attack() {}
+
+void Player::update(float deltaTime) {
+
+    Player::move(deltaTime);
+
 }
 

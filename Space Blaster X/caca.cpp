@@ -3,6 +3,13 @@
 using namespace std;
 using namespace sf;
 
+void initialisation() {
+
+
+}
+void cursor() {
+    
+}
 int main() {
     Player player(400.f, 300.f);
     Clock clock;
@@ -77,13 +84,14 @@ int main() {
         }
         player.update(deltaTime.asSeconds());
 
-        window.clear();
+        
         window.draw(ifmSprite);
         //window.draw(bpSprite);
         window.draw(text);
         window.draw(text2);
         window.draw(player.ship);
         window.display();
+        window.clear();
     }
 
     return 0;
