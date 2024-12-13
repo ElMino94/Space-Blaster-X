@@ -7,6 +7,7 @@ Player::Player(float x, float y){
     friction = 0.99925f; // Friction pour ralentir la vitesse
     invincible = false;
     pv = 100;
+    attaquespeed = 1;
     ship.setRadius(20.f);
     ship.setFillColor(sf::Color::Green);
     ship.setPosition(position);
@@ -21,13 +22,13 @@ void Player::attack() {}
 void Player::update(float deltaTime) {
     sf::Vector2f direction(0.f, 0.f);
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
         direction.y -= 1.f;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
         direction.y += 1.f;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
         direction.x -= 1.f;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         direction.x += 1.f;
 
     if (direction.x != 0.f || direction.y != 0.f) {

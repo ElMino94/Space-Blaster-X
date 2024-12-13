@@ -14,6 +14,7 @@ private:
     sf::Vector2f velocity;
     float acceleration;
     float friction;
+    int attaquespeed;
 
 public:
     Player(float x, float y);

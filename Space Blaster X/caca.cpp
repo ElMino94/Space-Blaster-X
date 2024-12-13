@@ -14,7 +14,7 @@ int main() {
     Texture ve1Texture;
     Texture ve2Texture;
     Texture ve3Texture;
-    Texture vpTexture;
+    Texture vpTexture; 
     Texture i1Texutre;
     Texture i2Texutre;
     Texture i3Texutre;
