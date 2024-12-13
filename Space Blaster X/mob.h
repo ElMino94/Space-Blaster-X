@@ -25,7 +25,7 @@ public:
     bool takedmg(int degat);
 
     void attack();
-    void update(float deltaTime);
+    virtual void update(float deltaTime);
 
     sf::CircleShape ship;
 
