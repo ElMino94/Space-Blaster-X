@@ -3,10 +3,6 @@
 using namespace std;
 using namespace sf;
 
-
-
-
-
 int main() {
     Player player(400.f, 300.f);
     sf::Clock clock;
@@ -54,7 +50,7 @@ int main() {
         Event event;
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed)
-                window.close(); // Fermer la fenêtre
+                window.close(); 
         }
         player.update(deltaTime.asSeconds());
         window.draw(ifmSprite);
