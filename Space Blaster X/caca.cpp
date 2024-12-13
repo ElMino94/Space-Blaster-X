@@ -72,6 +72,8 @@ int main() {
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed)
                 window.close(); 
+            if (event.key.code == sf::Keyboard::Escape)
+                window.close();
         }
         player.update(deltaTime.asSeconds());
 
