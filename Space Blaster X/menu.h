@@ -13,10 +13,14 @@ public:
 	Texture bpTexture;
 	Texture setTexture;
 	Texture exTexture;	
+	Texture aonTexture;
+	Texture aofTexture;
 	Sprite ifmSprite;
 	Sprite bpSprite;
 	Sprite setSprite;
 	Sprite exSprite;
+	Sprite aonTexture;
+	Sprite aofTexture;
 	void initialisation();//generation sprites
 	void menu(RenderWindow& window);//pause
 	void ep(RenderWindow& window);//first ecran

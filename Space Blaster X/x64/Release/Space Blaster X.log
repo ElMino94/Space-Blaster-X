@@ -1,14 +1,12 @@
-﻿  caca.cpp
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(20,30): warning C4305: 'argument' : troncation de 'unsigned __int64' à 'unsigned int'
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(20,30): warning C4309: 'argument' : troncation de valeur de constante
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(18,10): warning C4930: 'MENU initialisation(void)' : fonction prototypée non appelée (était-ce la définition de variable souhaitée ?)
-  menu.cpp
-  mob.cpp
-  player.cpp
+﻿  menu.cpp
   player.h
-  Previous IPDB was built with incompatible compiler, fall back to full compilation.
-x64\Release\player.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
-  Génération de code en cours
-  All 78 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Fin de la génération du code
-  Space Blaster X.vcxproj -> C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\x64\Release\Space Blaster X.exe
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.h(22,9): error C2371: 'MENU::aonTexture' : redéfinition ; types de base différents
+  (compiler le fichier source 'menu.cpp')
+      C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.h(16,10):
+      voir la déclaration de 'MENU::aonTexture'
+  
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.h(23,9): error C2371: 'MENU::aofTexture' : redéfinition ; types de base différents
+  (compiler le fichier source 'menu.cpp')
+      C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.h(17,10):
+      voir la déclaration de 'MENU::aofTexture'
+  

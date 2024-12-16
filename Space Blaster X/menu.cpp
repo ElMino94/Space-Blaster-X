@@ -24,9 +24,6 @@ void MENU::initialisation()
         cerr << "Erreur : Impossible de charger la police !" << endl;
         return;
     }
-
-    
-
     text.setFont(font);
     text.setString("Space Blaster X");
     text.setCharacterSize(75);
@@ -38,22 +35,16 @@ void MENU::initialisation()
 
 void MENU::menu(RenderWindow& window)
 {
-	
-
-
-    window.draw(ifmSprite);
-    window.draw(bpSprite);
-    window.draw(setSprite);
-    window.draw(exSprite);
-
-
+	    
 }
 
 void MENU::ep(RenderWindow& window) 
 {
+    window.draw(text);
     window.draw(ifmSprite);
-
-    
+    window.draw(bpSprite);
+    window.draw(setSprite);
+    window.draw(exSprite);
 }
 
 void MENU::set(RenderWindow& window)
