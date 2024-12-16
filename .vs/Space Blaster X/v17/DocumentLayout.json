@@ -43,6 +43,21 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-13T10:08:52.309Z"
+<<<<<<< Updated upstream
+=======
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "mob.h",
+              "DocumentMoniker": "C:\\Users\\trestoux\\source\\repos\\Space Blaster X\\Space Blaster X\\mob.h",
+              "RelativeDocumentMoniker": "Space Blaster X\\mob.h",
+              "ToolTip": "C:\\Users\\trestoux\\source\\repos\\Space Blaster X\\Space Blaster X\\mob.h",
+              "RelativeToolTip": "Space Blaster X\\mob.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-13T10:08:31.754Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
@@ -54,7 +69,11 @@
               "RelativeToolTip": "Space Blaster X\\mob.h",
               "ViewState": "AgIAABUAAAAAAAAAAAAAAAIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+<<<<<<< Updated upstream
               "WhenOpened": "2024-12-13T10:08:31.754Z"
+=======
+              "WhenOpened": "2024-12-13T10:07:00.852Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
@@ -88,7 +107,11 @@
               "RelativeDocumentMoniker": "Space Blaster X\\caca.cpp",
               "ToolTip": "C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\caca.cpp",
               "RelativeToolTip": "Space Blaster X\\caca.cpp",
+<<<<<<< Updated upstream
               "ViewState": "AgIAAEsAAAAAAAAAAAAAAFcAAABeAAAAAAAAAA==",
+=======
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAD4AAAAkAAAAAAAAAA==",
+>>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-03T14:30:52.162Z",
               "EditorCaption": ""
