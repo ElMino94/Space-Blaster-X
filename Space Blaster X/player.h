@@ -19,6 +19,8 @@ private:
     int attaquespeed;
 
 public:
+    Texture pTexture;
+    Sprite pSprite;
     Player(float x, float y);
     ~Player() = default;
 
@@ -29,9 +31,7 @@ public:
     void attack();
     void update(float deltaTime);
 
-    Texture pTexture;
-    Sprite pSprite;
-
+    
 };
 
 

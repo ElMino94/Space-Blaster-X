@@ -20,6 +20,12 @@ int main()
     window.setFramerateLimit(9999999999999999999);
     Player player(400.f, 300.f);
     Clock clock;
+    
+    Texture pTexture;
+    pTexture.loadFromFile("assetocorsa\\player.png");
+    Sprite pSprite(pTexture);
+    
+    pSprite.setPosition(400, 300);
 
     while (window.isOpen()) 
     {
