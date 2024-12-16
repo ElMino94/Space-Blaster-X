@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "player.h"
+#include "menu.h"
 using namespace std;
 using namespace sf;
 
@@ -14,44 +15,11 @@ void cursor() {
 
 int main()
 {
-    Player player(400.f, 300.f);
-    Clock clock;
-    Texture ifmTexture;
-    Texture bpTexture;
-    Texture setTexture;
-    Texture exTexture;
-
-    ifmTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
-    bpTexture.loadFromFile("assetocorsa\\bp.png");
-    setTexture.loadFromFile("assetocorsa\\set.png");
-    exTexture.loadFromFile("assetocorsa\\ex.png");
-
+    initialisation();
     RenderWindow window(VideoMode(1920, 1080), "Space Blaster X", Style::None);
     window.setFramerateLimit(9999999999999999999);
-
-    Sprite ifmSprite(ifmTexture);
-    ifmSprite.setPosition(0, 0);
-    Sprite bpSprite(bpTexture);
-    bpSprite.setPosition(50, 200);
-    Sprite setSprite(setTexture);
-    setSprite.setPosition(50, 350);
-    Sprite exSprite(exTexture);
-    exSprite.setPosition(50, 500);
-
-    Font font;
-    if (!font.loadFromFile("assetocorsa\\Neon Energy x.ttf")) {
-        cerr << "Erreur : Impossible de charger la police !" << endl;
-        return -1;
-    }
-
-    Text text;
-
-    text.setFont(font);
-    text.setString("Space Blaster X");
-    text.setCharacterSize(75);
-    text.setFillColor(Color(16, 39, 117));
-    text.setStyle((Text::Bold | Text::Underlined));
-    text.setPosition(50, 50);
+    Player player(400.f, 300.f);
+    Clock clock;
 
     while (window.isOpen()) 
     {
@@ -77,13 +45,7 @@ int main()
 
             player.update(deltaTime.asSeconds());
 
-
-            window.draw(ifmSprite);
-            window.draw(text);
-            //window.draw(player.ship);
-            window.draw(bpSprite);
-            window.draw(setSprite);
-            window.draw(exSprite);
+            window.draw(player.ship);
             window.display();
             window.clear();
         }

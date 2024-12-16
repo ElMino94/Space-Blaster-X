@@ -1,8 +1,13 @@
-﻿  menu.cpp
+﻿  caca.cpp
+C:\Users\tgoncalves\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(20,30): warning C4305: 'argument' : troncation de 'unsigned __int64' à 'unsigned int'
+C:\Users\tgoncalves\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(20,30): warning C4309: 'argument' : troncation de valeur de constante
+  menu.cpp
+  mob.cpp
+  player.cpp
+  player.h
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
 x64\Release\player.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
   Génération de code en cours
-  0 of 87 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  All 88 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Fin de la génération du code
-  Space Blaster X.vcxproj -> C:\Users\trestoux\source\repos\Space Blaster X\x64\Release\Space Blaster X.exe
+  Space Blaster X.vcxproj -> C:\Users\tgoncalves\Documents\GitHub\Space-Blaster-X\x64\Release\Space Blaster X.exe
