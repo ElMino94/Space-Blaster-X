@@ -1,12 +1,4 @@
 ﻿  caca.cpp
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\caca.cpp(36,30): warning C4305: 'argument' : troncation de 'unsigned __int64' à 'unsigned int'
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\caca.cpp(36,30): warning C4309: 'argument' : troncation de valeur de constante
-  mob.cpp
-  player.cpp
-  player.h
-  Previous IPDB was built with incompatible compiler, fall back to full compilation.
-x64\Release\player.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
-  Génération de code en cours
-  All 86 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Fin de la génération du code
-  Space Blaster X.vcxproj -> C:\Users\trestoux\source\repos\Space Blaster X\x64\Release\Space Blaster X.exe
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(25,30): warning C4305: 'argument' : troncation de 'unsigned __int64' à 'unsigned int'
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(25,30): warning C4309: 'argument' : troncation de valeur de constante
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(32,33): error C3688: suffixe littéral non valide 'f'; opérateur littéral ou modèle d'opérateur littéral 'operator ""f' introuvable
