@@ -9,8 +9,6 @@ C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.h(23,
       C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.h(17,10):
       voir la déclaration de 'MENU::aofTexture'
   
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(20,30): warning C4305: 'argument' : troncation de 'unsigned __int64' à 'unsigned int'
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(20,30): warning C4309: 'argument' : troncation de valeur de constante
   menu.cpp
 C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.h(22,9): error C2371: 'MENU::aonTexture' : redéfinition ; types de base différents
   (compiler le fichier source 'menu.cpp')
@@ -22,57 +20,57 @@ C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.h(23,
       C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.h(17,10):
       voir la déclaration de 'MENU::aofTexture'
   
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,69): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,69): warning C4244:         with
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,69): warning C4244:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,69): warning C4244:             T=int
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,69): warning C4244:         ]
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,69): warning C4244:         and
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,69): warning C4244:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,69): warning C4244:             T=float
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,69): warning C4244:         ]
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,57): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,57): warning C4244:         with
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,57): warning C4244:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,57): warning C4244:             T=int
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,57): warning C4244:         ]
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,57): warning C4244:         and
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,57): warning C4244:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,57): warning C4244:             T=float
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(40,57): warning C4244:         ]
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,75): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,75): warning C4244:         with
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,75): warning C4244:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,75): warning C4244:             T=int
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,75): warning C4244:         ]
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,75): warning C4244:         and
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,75): warning C4244:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,75): warning C4244:             T=float
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,75): warning C4244:         ]
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,63): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,63): warning C4244:         with
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,63): warning C4244:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,63): warning C4244:             T=int
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,63): warning C4244:         ]
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,63): warning C4244:         and
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,63): warning C4244:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,63): warning C4244:             T=float
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(43,63): warning C4244:         ]
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,73): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,73): warning C4244:         with
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,73): warning C4244:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,73): warning C4244:             T=int
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,73): warning C4244:         ]
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,73): warning C4244:         and
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,73): warning C4244:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,73): warning C4244:             T=float
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,73): warning C4244:         ]
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,61): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,61): warning C4244:         with
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,61): warning C4244:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,61): warning C4244:             T=int
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,61): warning C4244:         ]
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,61): warning C4244:         and
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,61): warning C4244:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,61): warning C4244:             T=float
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(46,61): warning C4244:         ]
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,69): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,69): warning C4244:         with
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,69): warning C4244:         [
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,69): warning C4244:             T=int
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,69): warning C4244:         ]
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,69): warning C4244:         and
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,69): warning C4244:         [
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,69): warning C4244:             T=float
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,69): warning C4244:         ]
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,57): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,57): warning C4244:         with
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,57): warning C4244:         [
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,57): warning C4244:             T=int
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,57): warning C4244:         ]
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,57): warning C4244:         and
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,57): warning C4244:         [
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,57): warning C4244:             T=float
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(44,57): warning C4244:         ]
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,75): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,75): warning C4244:         with
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,75): warning C4244:         [
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,75): warning C4244:             T=int
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,75): warning C4244:         ]
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,75): warning C4244:         and
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,75): warning C4244:         [
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,75): warning C4244:             T=float
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,75): warning C4244:         ]
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,63): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,63): warning C4244:         with
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,63): warning C4244:         [
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,63): warning C4244:             T=int
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,63): warning C4244:         ]
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,63): warning C4244:         and
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,63): warning C4244:         [
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,63): warning C4244:             T=float
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(47,63): warning C4244:         ]
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,73): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,73): warning C4244:         with
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,73): warning C4244:         [
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,73): warning C4244:             T=int
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,73): warning C4244:         ]
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,73): warning C4244:         and
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,73): warning C4244:         [
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,73): warning C4244:             T=float
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,73): warning C4244:         ]
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,61): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,61): warning C4244:         with
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,61): warning C4244:         [
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,61): warning C4244:             T=int
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,61): warning C4244:         ]
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,61): warning C4244:         and
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,61): warning C4244:         [
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,61): warning C4244:             T=float
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\menu.cpp(50,61): warning C4244:         ]
