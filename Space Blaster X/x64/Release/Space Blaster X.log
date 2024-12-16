@@ -1,37 +1,5 @@
 ﻿  menu.cpp
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(8,10): error C3646: 'ifmTexture' : spécificateur de substitution inconnu
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(8,20): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(9,10): error C3646: 'bpTexture' : spécificateur de substitution inconnu
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(9,19): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(10,10): error C3646: 'setTexture' : spécificateur de substitution inconnu
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(10,20): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(11,10): error C3646: 'exTexture' : spécificateur de substitution inconnu
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(11,19): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(12,9): error C3646: 'ifmSprite' : spécificateur de substitution inconnu
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(12,18): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(13,9): error C3646: 'bpSprite' : spécificateur de substitution inconnu
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(13,17): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(14,9): error C3646: 'setSprite' : spécificateur de substitution inconnu
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(14,18): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(15,9): error C3646: 'exSprite' : spécificateur de substitution inconnu
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(15,17): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(18,10): error C2061: erreur de syntaxe : identificateur 'RenderWindow'
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(7,5): error C2065: 'ifmTexture' : identificateur non déclaré
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(8,5): error C2065: 'bpTexture' : identificateur non déclaré
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(9,5): error C2065: 'setTexture' : identificateur non déclaré
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(10,5): error C2065: 'exTexture' : identificateur non déclaré
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(12,5): error C2065: 'ifmSprite' : identificateur non déclaré
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(12,26): error C2065: 'ifmTexture' : identificateur non déclaré
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(13,5): error C2065: 'ifmSprite' : identificateur non déclaré
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(14,5): error C2065: 'bpSprite' : identificateur non déclaré
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(14,25): error C2065: 'bpTexture' : identificateur non déclaré
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(15,5): error C2065: 'bpSprite' : identificateur non déclaré
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(16,5): error C2065: 'setSprite' : identificateur non déclaré
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(16,26): error C2065: 'setTexture' : identificateur non déclaré
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(17,5): error C2065: 'setSprite' : identificateur non déclaré
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(18,5): error C2065: 'exSprite' : identificateur non déclaré
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(18,25): error C2065: 'exTexture' : identificateur non déclaré
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(19,5): error C2065: 'exSprite' : identificateur non déclaré
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(48,12): error C2511: 'void MENU::ep(sf::RenderWindow)' : impossible de trouver la fonction membre surchargée dans 'MENU'
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.h(6,7): message : voir la déclaration de 'MENU'
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\menu.cpp(50,17): error C2065: 'ifmSprite' : identificateur non déclaré
+x64\Release\player.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
+caca.obj : error LNK2001: symbole externe non résolu "public: void __cdecl Player::update(float)" (?update@Player@@QEAAXM@Z)
+caca.obj : error LNK2001: symbole externe non résolu "public: __cdecl Player::Player(float,float)" (??0Player@@QEAA@MM@Z)
+C:\Users\tgoncalves\Documents\GitHub\Space-Blaster-X\x64\Release\Space Blaster X.exe : fatal error LNK1120: 2 externes non résolus

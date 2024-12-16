@@ -15,7 +15,7 @@ void cursor() {
 
 int main()
 {
-    initialisation();
+    MENU initialisation();
     RenderWindow window(VideoMode(1920, 1080), "Space Blaster X", Style::None);
     window.setFramerateLimit(9999999999999999999);
     Player player(400.f, 300.f);

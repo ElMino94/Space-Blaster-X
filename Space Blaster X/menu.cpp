@@ -1,4 +1,5 @@
 #include"menu.h"
+
 using namespace sf;
 using namespace std;
 
@@ -24,7 +25,7 @@ void MENU::initialisation()
         return;
     }
 
-    Text text;
+    
 
     text.setFont(font);
     text.setString("Space Blaster X");
@@ -35,24 +36,27 @@ void MENU::initialisation()
 
 }
 
-void MENU::menu()
+void MENU::menu(RenderWindow& window)
 {
 	
 
 
-
+    window.draw(ifmSprite);
+    window.draw(bpSprite);
+    window.draw(setSprite);
+    window.draw(exSprite);
 
 
 }
 
-void MENU::ep(RenderWindow window) 
+void MENU::ep(RenderWindow& window) 
 {
     window.draw(ifmSprite);
 
     
 }
 
-void MENU::set() 
+void MENU::set(RenderWindow& window)
 {
 
 }
