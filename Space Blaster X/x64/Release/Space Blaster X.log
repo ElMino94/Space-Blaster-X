@@ -1,5 +1,14 @@
-﻿  menu.cpp
+﻿  caca.cpp
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(20,30): warning C4305: 'argument' : troncation de 'unsigned __int64' à 'unsigned int'
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(20,30): warning C4309: 'argument' : troncation de valeur de constante
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(18,10): warning C4930: 'MENU initialisation(void)' : fonction prototypée non appelée (était-ce la définition de variable souhaitée ?)
+  menu.cpp
+  mob.cpp
+  player.cpp
+  player.h
+  Previous IPDB was built with incompatible compiler, fall back to full compilation.
 x64\Release\player.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
-caca.obj : error LNK2001: symbole externe non résolu "public: void __cdecl Player::update(float)" (?update@Player@@QEAAXM@Z)
-caca.obj : error LNK2001: symbole externe non résolu "public: __cdecl Player::Player(float,float)" (??0Player@@QEAA@MM@Z)
-C:\Users\tgoncalves\Documents\GitHub\Space-Blaster-X\x64\Release\Space Blaster X.exe : fatal error LNK1120: 2 externes non résolus
+  Génération de code en cours
+  All 78 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Fin de la génération du code
+  Space Blaster X.vcxproj -> C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\x64\Release\Space Blaster X.exe
