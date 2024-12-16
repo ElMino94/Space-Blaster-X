@@ -9,7 +9,6 @@ using namespace sf;
 
 void initialisation() {
 
-
 }
 void cursor() {
     
@@ -29,7 +28,7 @@ int main()
     setTexture.loadFromFile("assetocorsa\\set.png");
     exTexture.loadFromFile("assetocorsa\\ex.png");
 
-    RenderWindow window(VideoMode(1920, 1080), "Space Blaster X");//, Style::None
+    RenderWindow window(VideoMode(1920, 1080), "Space Blaster X", Style::None);
     window.setFramerateLimit(9999999999999999999);
 
     Sprite ifmSprite(ifmTexture);
@@ -63,6 +62,8 @@ int main()
         while (window.pollEvent(event)) 
         {
             if (event.type == Event::Closed)
+                window.close();
+            if (event.key.code == Keyboard::Escape)
                 window.close();
         }
 
