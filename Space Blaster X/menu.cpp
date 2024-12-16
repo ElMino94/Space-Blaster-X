@@ -32,12 +32,24 @@ void MENU::initialisation()
     text.setPosition(50, 50);
 
 }
+//-----------------------------------------------------MENU DU JEU-----------------------------------------------------//
+void MENU::menu(RenderWindow& window) {
+    Vector2i mousePos = Mouse::getPosition(window);
 
-void MENU::menu(RenderWindow& window)
-{
-	    
+    if (Mouse::isButtonPressed(Mouse::Left)) {
+        if (bpSprite.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+            cout << "Play selected!\n";
+        }
+        else if (setSprite.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+            cout << "Settings selected!\n";
+        }
+        else if(exSprite.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+            window.close();
+        }
+    }
 }
 
+//-----------------------------------------------------ECRAN PRINCIPALE-----------------------------------------------------//
 void MENU::ep(RenderWindow& window) 
 {
     window.draw(text);
@@ -47,7 +59,9 @@ void MENU::ep(RenderWindow& window)
     window.draw(exSprite);
 }
 
+//-----------------------------------------------------SETTINGS-----------------------------------------------------//
 void MENU::set(RenderWindow& window)
 {
 
 }
+
