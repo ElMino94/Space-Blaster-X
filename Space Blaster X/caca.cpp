@@ -14,7 +14,9 @@ void initialisation() {
 void cursor() {
     
 }
-int main() {
+
+int main()
+{
     Player player(400.f, 300.f);
     Clock clock;
     Texture ifmTexture;
@@ -26,7 +28,7 @@ int main() {
     bpTexture.loadFromFile("assetocorsa\\bp.png");
     setTexture.loadFromFile("assetocorsa\\set.png");
     exTexture.loadFromFile("assetocorsa\\ex.png");
-    
+
     RenderWindow window(VideoMode(1920, 1080), "Space Blaster X");//, Style::None
     window.setFramerateLimit(9999999999999999999);
 
@@ -35,9 +37,9 @@ int main() {
     Sprite bpSprite(bpTexture);
     bpSprite.setPosition(50, 200);
     Sprite setSprite(setTexture);
-    setSprite.setPosition();
+    setSprite.setPosition(50, 350);
     Sprite exSprite(exTexture);
-    exSprite.setPosition();
+    exSprite.setPosition(50, 500);
 
     Font font;
     if (!font.loadFromFile("assetocorsa\\Neon Energy x.ttf")) {
@@ -47,40 +49,50 @@ int main() {
 
     Text text;
 
-    text.setFont(font);               
+    text.setFont(font);
     text.setString("Space Blaster X");
-    text.setCharacterSize(75);        
+    text.setCharacterSize(75);
     text.setFillColor(Color(16, 39, 117));
     text.setStyle((Text::Bold | Text::Underlined));
     text.setPosition(50, 50);
 
-    while (window.isOpen()) {
+    while (window.isOpen()) 
+    {
         Time deltaTime = clock.restart();
         Event event;
-        while (window.pollEvent(event)) {
+        while (window.pollEvent(event)) 
+        {
             if (event.type == Event::Closed)
                 window.close();
         }
 
-        if (Mouse::isButtonPressed(Mouse::Left)) {
+        /*if (Mouse::isButtonPressed(Mouse::Left)) 
+        {
             Vector2i mousePos = Mouse::getPosition(window);
 
-            if (bpSprite.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+            if (bpSprite.getGlobalBounds().contains(mousePos.x, mousePos.y)) 
+            {
 
-            }
-        player.update(deltaTime.asSeconds());
+            }*/
 
-        
-        window.draw(ifmSprite);
-        window.draw(text);
-        //window.draw(player.ship);
-        window.draw(bpSprite);
-        window.display();
-        window.clear();
-    }
 
-    return 0;
+            player.update(deltaTime.asSeconds());
+
+
+            window.draw(ifmSprite);
+            window.draw(text);
+            //window.draw(player.ship);
+            window.draw(bpSprite);
+            window.draw(setSprite);
+            window.draw(exSprite);
+            window.display();
+            window.clear();
+        }
+
+        return 0;
 }
+
+
 
 //Comment faire le changement de menu??
 //
