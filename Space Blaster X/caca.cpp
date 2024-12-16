@@ -18,15 +18,17 @@ int main()
     RenderWindow window(VideoMode(1920, 1080), "Space Blaster X", Style::None);
     window.setFramerateLimit(200);
 
-    MENU menu;
-    menu.initialisation();
+    MENU menu;    
     Player player(400.f, 300.f);
+    Clock clock;
+
+    menu.initialisation();
 
     Texture pTexture;
     pTexture.loadFromFile("assetocorsa\\player.png");
     player.pSprite.setTexture(pTexture);
 
-    Clock clock;
+    
     
     // Gestion des états du jeu
     GameState currentState = MODMENU;
@@ -47,21 +49,30 @@ int main()
                 switch (currentState) {
                 case MODMENU:
                     if (event.key.code == Keyboard::Enter) {
-                        currentState = PLAY; // Lancer le jeu
+                        currentState = PLAY; // Passer au jeu
+                    }
+                    if (event.key.code == Keyboard::S) {
+                        currentState = SETTINGS; // Aller aux paramètres
+                    }
+                    if (event.key.code == Keyboard::E) {
+                        currentState = EXIT; // Quitter le jeu
                     }
                     break;
 
                 case PLAY:
                     if (event.key.code == Keyboard::P) {
-                        currentState = MODMENU; // Retour au menu
+                        currentState = MODMENU; // Retour au menu principal
                     }
                     break;
 
                 case SETTINGS:
-                    // Exemple : revenir au menu
                     if (event.key.code == Keyboard::BackSpace) {
-                        currentState = MODMENU;
+                        currentState = MODMENU; // Retour au menu principal
                     }
+                    break;
+
+                case EXIT:
+                    window.close();
                     break;
 
                 default:
@@ -75,7 +86,7 @@ int main()
         switch (currentState) {
         
         case MODMENU:
-            menu.ep(window);
+            menu.drawMainMenu(window);
             break;
 
         case PLAY:
@@ -84,7 +95,7 @@ int main()
             break;
 
         case SETTINGS:
-            menu.set(window);
+            menu.drawSettings(window);
             break;
 
         case EXIT:

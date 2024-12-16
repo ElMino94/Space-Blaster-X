@@ -1,73 +1,86 @@
 #include"menu.h"
-
+#include <SFML/Graphics.hpp>
 using namespace sf;
 using namespace std;
-//------------------------------------------------------------------------------------------------------------------------------//
-//-----------------------------------------------------Chargement du visuel-----------------------------------------------------//
-//------------------------------------------------------------------------------------------------------------------------------//
-void MENU::initialisation()  
-{
-    ifmTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
-    bpTexture.loadFromFile("assetocorsa\\bp.png");
-    setTexture.loadFromFile("assetocorsa\\set.png");
-    exTexture.loadFromFile("assetocorsa\\ex.png");
 
-    ifmSprite.setTexture(ifmTexture);
-    ifmSprite.setPosition(0, 0);
-    bpSprite.setTexture(bpTexture);
-    bpSprite.setPosition(50, 200);
-    setSprite.setTexture(setTexture);
-    setSprite.setPosition(50, 350);
-    exSprite.setTexture(exTexture);
-    exSprite.setPosition(50, 500);
+MENU::MENU() {
+    initialisation(); // Appel automatique pour charger textures/polices
+}
 
-    Font font;
-    if (!font.loadFromFile("assetocorsa\\Neon Energy x.ttf")) {
+// Méthode pour initialiser les textures, polices et sprites
+void MENU::initialisation() {
+    // Chargement des textures
+    if (!backgroundTexture.loadFromFile("assetocorsa/image-fond-menu.jpg"))
+        cerr << "Erreur : Impossible de charger l'image de fond !" << endl;
+
+    if (!playTexture.loadFromFile("assetocorsa/bp.png"))
+        cerr << "Erreur : Impossible de charger play.png !" << endl;
+
+    if (!settingsTexture.loadFromFile("assetocorsa/set.png"))
+        cerr << "Erreur : Impossible de charger set.png !" << endl;
+
+    if (!exitTexture.loadFromFile("assetocorsa/ex.png"))
+        cerr << "Erreur : Impossible de charger ex.png !" << endl;
+
+    // Configuration des sprites
+    backgroundSprite.setTexture(backgroundTexture);
+
+    playSprite.setTexture(playTexture);
+    playSprite.setPosition(50, 200);
+
+    settingsSprite.setTexture(settingsTexture);
+    settingsSprite.setPosition(50, 350);
+
+    exitSprite.setTexture(exitTexture);
+    exitSprite.setPosition(50, 500);
+
+    // Chargement de la police et configuration du texte
+    if (!font.loadFromFile("assetocorsa/Neon Energy x.ttf")) {
         cerr << "Erreur : Impossible de charger la police !" << endl;
         return;
     }
-    text.setFont(font);
-    text.setString("Space Blaster X");
-    text.setCharacterSize(75);
-    text.setFillColor(Color(16, 39, 117));
-    text.setStyle((Text::Bold | Text::Underlined));
-    text.setPosition(50, 50);
 
-}
-//---------------------------------------------------------------------------------------------------------------------//
-//-----------------------------------------------------MENU DU JEU-----------------------------------------------------//
-//---------------------------------------------------------------------------------------------------------------------//
-void MENU::menu(RenderWindow& window) {
-    Vector2i mousePos = Mouse::getPosition(window);
-
-    if (Mouse::isButtonPressed(Mouse::Left)) {
-        if (bpSprite.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
-            cout << "Play selected!\n";
-        }
-        else if (setSprite.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
-            cout << "Settings selected!\n";
-        }
-        else if(exSprite.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
-            window.close();
-        }
-    }
-}
-//--------------------------------------------------------------------------------------------------------------------------//
-//-----------------------------------------------------ECRAN PRINCIPALE-----------------------------------------------------//
-//--------------------------------------------------------------------------------------------------------------------------//
-void MENU::ep(RenderWindow& window) 
-{
-    window.draw(text);
-    window.draw(ifmSprite);
-    window.draw(bpSprite);
-    window.draw(setSprite);
-    window.draw(exSprite);
-}
-//------------------------------------------------------------------------------------------------------------------//
-//-----------------------------------------------------SETTINGS-----------------------------------------------------//
-//------------------------------------------------------------------------------------------------------------------//
-void MENU::set(RenderWindow& window)
-{
-
+    titleText.setFont(font);
+    titleText.setString("Space Blaster X");
+    titleText.setCharacterSize(75);
+    titleText.setFillColor(Color(16, 39, 117));
+    titleText.setStyle(Text::Bold | Text::Underlined);
+    titleText.setPosition(50, 50);
 }
 
+// Affiche le menu principal
+void MENU::drawMainMenu(RenderWindow& window) {
+    window.draw(backgroundSprite);
+    window.draw(titleText);
+    window.draw(playSprite);
+    window.draw(settingsSprite);
+    window.draw(exitSprite);
+}
+
+// Affiche le menu des paramètres
+void MENU::drawSettings(RenderWindow& window) {
+    window.draw(backgroundSprite);
+
+    Text settingsText;
+    settingsText.setFont(font);
+    settingsText.setString("Settings: Coming Soon...");
+    settingsText.setCharacterSize(50);
+    settingsText.setFillColor(Color::White);
+    settingsText.setPosition(50, 300);
+
+    window.draw(settingsText);
+}
+
+// Affiche un écran de confirmation pour quitter
+void MENU::drawExitConfirmation(RenderWindow& window) {
+    window.draw(backgroundSprite);
+
+    Text exitText;
+    exitText.setFont(font);
+    exitText.setString("Are you sure you want to exit? (Y/N)");
+    exitText.setCharacterSize(50);
+    exitText.setFillColor(Color::White);
+    exitText.setPosition(50, 300);
+
+    window.draw(exitText);
+}
