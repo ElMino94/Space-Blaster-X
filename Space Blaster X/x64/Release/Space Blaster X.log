@@ -1,6 +1,4 @@
-﻿  caca.cpp
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\caca.cpp(32,30): warning C4305: 'argument' : troncation de 'unsigned __int64' à 'unsigned int'
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\caca.cpp(32,30): warning C4309: 'argument' : troncation de valeur de constante
+﻿  menu.cpp
 x64\Release\player.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
   Génération de code en cours
   0 of 87 functions ( 0.0%) were compiled, the rest were copied from previous compilation.

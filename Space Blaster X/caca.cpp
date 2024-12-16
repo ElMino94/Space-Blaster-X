@@ -7,9 +7,7 @@ using namespace sf;
 //""Sprite.setScale(1.3f, 1.3f); augmente la taille du sprite
 //text.setStyle(sf::Text::Underlined); // Applique un soulignement
 
-void initialisation() {
 
-}
 void cursor() {
     
 }

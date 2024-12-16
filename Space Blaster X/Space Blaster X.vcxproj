@@ -133,11 +133,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="caca.cpp" />
+    <ClCompile Include="menu.cpp" />
     <ClCompile Include="mob.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="player.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="menu.h" />
     <ClInclude Include="mob.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
