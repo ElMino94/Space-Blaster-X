@@ -1,11 +1,5 @@
-﻿  caca.cpp
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(31,30): warning C4305: 'argument' : troncation de 'unsigned __int64' à 'unsigned int'
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(31,30): warning C4309: 'argument' : troncation de valeur de constante
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(38,15): error C2661: 'sf::Transformable::setPosition' : aucune fonction surchargée ne nécessite 0 arguments
-      C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(38,15):
-      lors de la tentative de mise en correspondance de la liste des arguments '()'
-  
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(40,14): error C2661: 'sf::Transformable::setPosition' : aucune fonction surchargée ne nécessite 0 arguments
-      C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(40,14):
-      lors de la tentative de mise en correspondance de la liste des arguments '()'
-  
+﻿  menu.cpp
+x64\Release\player.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
+caca.obj : error LNK2001: symbole externe non résolu "public: void __cdecl Player::update(float)" (?update@Player@@QEAAXM@Z)
+caca.obj : error LNK2001: symbole externe non résolu "public: __cdecl Player::Player(float,float)" (??0Player@@QEAA@MM@Z)
+C:\Users\tgoncalves\Documents\GitHub\Space-Blaster-X\x64\Release\Space Blaster X.exe : fatal error LNK1120: 2 externes non résolus

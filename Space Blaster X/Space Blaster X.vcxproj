@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Users\PC\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\PC\Downloads\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\SFML-2.6.1-windows-vc17-64-bit\SFML-2.6.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SFML-2.6.1-windows-vc17-64-bit\SFML-2.6.1\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -133,11 +133,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="caca.cpp" />
+    <ClCompile Include="menu.cpp" />
     <ClCompile Include="mob.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="player.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="menu.h" />
     <ClInclude Include="mob.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

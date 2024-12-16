@@ -8,10 +8,8 @@ Player::Player(float x, float y){
     invincible = false;
     pv = 100;
     attaquespeed = 1;
-    ship.setRadius(20.f);
-    ship.setFillColor(sf::Color::Green);
-    ship.setPosition(position);
-
+    pTexture.loadFromFile("assetocorsa\\player.png");
+    pSprite.setTexture(pTexture);
 }
 
 bool Player::isalive(){}
@@ -36,7 +34,7 @@ void Player::move(float deltaTime) {
     velocity *= friction;
     position += velocity * deltaTime;
 
-    ship.setPosition(position);
+    pSprite.setPosition(position);
 }
 bool Player::takedmg(int degat) {}
 
