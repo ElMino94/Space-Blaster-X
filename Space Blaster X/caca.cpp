@@ -44,8 +44,7 @@ int main()
 
 
             player.update(deltaTime.asSeconds());
-
-            window.draw(player.ship);
+            window.draw(player.pSprite);
             window.display();
             window.clear();
         }

@@ -29,7 +29,6 @@ public:
     void attack();
     void update(float deltaTime);
 
-    CircleShape ship;
     Texture pTexture;
     Sprite pSprite;
 

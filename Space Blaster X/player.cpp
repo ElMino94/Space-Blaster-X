@@ -10,7 +10,6 @@ Player::Player(float x, float y){
     attaquespeed = 1;
     pTexture.loadFromFile("assetocorsa\\player.png");
     Sprite pSprite(pTexture);
-    pSprite.setPosition(500, 500);
 }
 
 bool Player::isalive(){}
