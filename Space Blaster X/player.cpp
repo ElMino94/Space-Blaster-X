@@ -1,4 +1,6 @@
 #include "player.h"
+using namespace sf;
+using namespace std;
 
 Player::Player(float x, float y){
     position = sf::Vector2f(x, y);
@@ -12,17 +14,21 @@ Player::Player(float x, float y){
     pSprite.setTexture(pTexture);
 }
 
-bool Player::isalive(){}
-void Player::move(float deltaTime) {
-    sf::Vector2f direction(0.f, 0.f);
+bool Player::isalive(){
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+    return pv > 0;
+}
+
+void Player::move(float deltaTime) {
+    Vector2f direction(0.f, 0.f);
+
+    if (Keyboard::isKeyPressed(Keyboard::Z))
         direction.y -= 1.f;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+    if (Keyboard::isKeyPressed(Keyboard::S))
         direction.y += 1.f;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+    if (Keyboard::isKeyPressed(Keyboard::Q))
         direction.x -= 1.f;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+    if (Keyboard::isKeyPressed(Keyboard::D))
         direction.x += 1.f;
 
     if (direction.x != 0.f || direction.y != 0.f) {
@@ -36,7 +42,15 @@ void Player::move(float deltaTime) {
 
     pSprite.setPosition(position);
 }
-bool Player::takedmg(int degat) {}
+bool Player::takedmg(int degat) {
+
+    pv -= degat;
+    if (pv <= 0) {
+        pv = 0;
+        return false;
+    }
+    return true;
+}
 
 void Player::attack() {}
 

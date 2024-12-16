@@ -10,7 +10,7 @@ void cursor() {
     
 }
 
-enum GameState{MODMENU, PLAY, SETTINGS, EXIT};
+enum GameState{ MODMENU, PLAY, SETTINGS, EXIT };
 
 int main()
 {
@@ -18,11 +18,13 @@ int main()
     RenderWindow window(VideoMode(1920, 1080), "Space Blaster X", Style::None);
     window.setFramerateLimit(200);
 
-    MENU menu;    
+    MENU menu; 
+    menu.initialisation();
+
     Player player(400.f, 300.f);
     Clock clock;
 
-    menu.initialisation();
+    
 
     Texture pTexture;
     pTexture.loadFromFile("assetocorsa\\player.png");

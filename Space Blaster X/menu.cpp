@@ -10,20 +10,26 @@ MENU::MENU() {
 // Méthode pour initialiser les textures, polices et sprites
 void MENU::initialisation() {
     // Chargement des textures
-    if (!backgroundTexture.loadFromFile("assetocorsa/image-fond-menu.jpg"))
+
+    backgroundTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg");
+    if (!backgroundTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg"))
         cerr << "Erreur : Impossible de charger l'image de fond !" << endl;
 
-    if (!playTexture.loadFromFile("assetocorsa/bp.png"))
+    playTexture.loadFromFile("assetocorsa\\bp.png");
+    if (!playTexture.loadFromFile("assetocorsa\\bp.png"))
         cerr << "Erreur : Impossible de charger play.png !" << endl;
 
-    if (!settingsTexture.loadFromFile("assetocorsa/set.png"))
+    settingsTexture.loadFromFile("assetocorsa\\set.png");
+    if (!settingsTexture.loadFromFile("assetocorsa\\set.png"))
         cerr << "Erreur : Impossible de charger set.png !" << endl;
 
-    if (!exitTexture.loadFromFile("assetocorsa/ex.png"))
+    exitTexture.loadFromFile("assetocorsa\\ex.png");
+    if (!exitTexture.loadFromFile("assetocorsa\\ex.png"))
         cerr << "Erreur : Impossible de charger ex.png !" << endl;
 
     // Configuration des sprites
     backgroundSprite.setTexture(backgroundTexture);
+    backgroundSprite.setPosition(0, 0);
 
     playSprite.setTexture(playTexture);
     playSprite.setPosition(50, 200);
@@ -35,7 +41,7 @@ void MENU::initialisation() {
     exitSprite.setPosition(50, 500);
 
     // Chargement de la police et configuration du texte
-    if (!font.loadFromFile("assetocorsa/Neon Energy x.ttf")) {
+    if (!font.loadFromFile("assetocorsa\\Neon Energy x.ttf")) {
         cerr << "Erreur : Impossible de charger la police !" << endl;
         return;
     }

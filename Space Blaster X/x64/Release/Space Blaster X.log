@@ -1,5 +1,8 @@
-﻿  menu.cpp
+﻿  caca.cpp
 x64\Release\player.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
-caca.obj : error LNK2001: symbole externe non résolu "public: void __cdecl Player::update(float)" (?update@Player@@QEAAXM@Z)
-caca.obj : error LNK2001: symbole externe non résolu "public: __cdecl Player::Player(float,float)" (??0Player@@QEAA@MM@Z)
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\x64\Release\Space Blaster X.exe : fatal error LNK1120: 2 externes non résolus
+  Génération de code en cours
+  9 of 92 functions ( 9.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  Fin de la génération du code
+  Space Blaster X.vcxproj -> C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\x64\Release\Space Blaster X.exe

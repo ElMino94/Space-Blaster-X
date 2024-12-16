@@ -12,8 +12,8 @@ private:
 
     int pv;
     bool invincible;
-    sf::Vector2f position;
-    sf::Vector2f velocity;
+    Vector2f position;
+    Vector2f velocity;
     float acceleration;
     float friction;
     int attaquespeed;
