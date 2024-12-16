@@ -1,4 +1,11 @@
 ﻿  caca.cpp
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(25,30): warning C4305: 'argument' : troncation de 'unsigned __int64' à 'unsigned int'
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(25,30): warning C4309: 'argument' : troncation de valeur de constante
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(32,33): error C3688: suffixe littéral non valide 'f'; opérateur littéral ou modèle d'opérateur littéral 'operator ""f' introuvable
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(31,30): warning C4305: 'argument' : troncation de 'unsigned __int64' à 'unsigned int'
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(31,30): warning C4309: 'argument' : troncation de valeur de constante
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(38,15): error C2661: 'sf::Transformable::setPosition' : aucune fonction surchargée ne nécessite 0 arguments
+      C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(38,15):
+      lors de la tentative de mise en correspondance de la liste des arguments '()'
+  
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(40,14): error C2661: 'sf::Transformable::setPosition' : aucune fonction surchargée ne nécessite 0 arguments
+      C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(40,14):
+      lors de la tentative de mise en correspondance de la liste des arguments '()'
+  
