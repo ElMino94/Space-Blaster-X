@@ -3,6 +3,8 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+using namespace sf;
+using namespace std;
 
 class Player
 {
@@ -27,7 +29,9 @@ public:
     void attack();
     void update(float deltaTime);
 
-    sf::CircleShape ship;
+    CircleShape ship;
+    Texture pTexture;
+    Sprite pSprite;
 
 };
 
