@@ -15,8 +15,8 @@ enum GameState { MODMENU, PLAY, SETTINGS, EXIT };
 int main()
 {
     
-    RenderWindow window(VideoMode(1920, 1080), "Space Blaster X");
-    window.setFramerateLimit(200);
+    RenderWindow window(VideoMode(1920, 1080), "Space Blaster X", Style::None);
+    window.setFramerateLimit(120);
 
     MENU menu; 
     menu.initialisation();

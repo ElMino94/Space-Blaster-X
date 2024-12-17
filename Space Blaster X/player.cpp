@@ -6,7 +6,7 @@ Player::Player(float x, float y){
     position = sf::Vector2f(x, y);
     velocity = sf::Vector2f(0.f, 0.f);
     acceleration = 3750.f; // Vitesse de l'accélération
-    friction = 0.99925f; // Friction pour ralentir la vitesse
+    friction = 0.975f; // Friction pour ralentir la vitesse
     invincible = false;
     pv = 100;
     attaquespeed = 1;
