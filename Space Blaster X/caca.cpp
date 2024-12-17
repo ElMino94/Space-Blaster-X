@@ -12,6 +12,49 @@ void cursor() {
 
 enum GameState { MODMENU, PLAY, SETTINGS, EXIT };
 
+
+
+
+void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& currentState, Event& event, float deltaTime) {
+
+    Vector2f mousePos;
+
+    if (event.type == Event::MouseButtonPressed) {
+        if (event.mouseButton.button == Mouse::Left) {
+            mousePos = Vector2f(event.mouseButton.x, event.mouseButton.y);
+
+            if (currentState == MODMENU) {
+                if (menu.playSprite.getGlobalBounds().contains(mousePos)) {
+                    currentState = PLAY;
+                }
+                else if (menu.settingsSprite.getGlobalBounds().contains(mousePos)) {
+                    currentState = SETTINGS;
+                }
+                else if (menu.exitSprite.getGlobalBounds().contains(mousePos)) {
+                    currentState = EXIT;
+                }
+            }
+        }
+    }
+
+    if (event.type == Event::KeyPressed) {
+        if (event.key.code == Keyboard::Escape) {
+            currentState = EXIT;
+        }
+    }
+
+
+
+
+
+
+}
+
+
+
+
+
+
 int main()
 {
     
