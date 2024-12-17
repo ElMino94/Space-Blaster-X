@@ -24,8 +24,6 @@ int main()
     Player player(400.f, 300.f);
     Clock clock;
 
-    
-
     Texture pTexture;
     pTexture.loadFromFile("assetocorsa\\player.png");
     player.pSprite.setTexture(pTexture);
