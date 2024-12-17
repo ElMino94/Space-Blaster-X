@@ -44,11 +44,24 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
         }
     }
 
+    switch (currentState) {
+    case MODMENU:
+        menu.drawMainMenu(window);
+        break;
 
+    case PLAY:
+        player.update(deltaTime, window);
+        window.draw(player.pSprite);
+        break;
 
+    case SETTINGS:
+        menu.drawSettings(window);
+        break;
 
-
-
+    case EXIT:
+        window.close();
+        break;
+    }
 }
 
 
@@ -89,64 +102,15 @@ int main()
                 if (event.key.code == Keyboard::Escape)
                     window.close();
 
-                // Gestion des interactions selon l'état actuel
-                switch (currentState) {
-                case MODMENU:
-                    if (event.key.code == Keyboard::Enter) {
-                        currentState = PLAY; // Passer au jeu
-                    }
-                    if (event.key.code == Keyboard::S) {
-                        currentState = SETTINGS; // Aller aux paramètres
-                    }
-                    if (event.key.code == Keyboard::E) {
-                        currentState = EXIT; // Quitter le jeu
-                    }
-                    break;
-
-                case PLAY:
-                    if (event.key.code == Keyboard::P) {
-                        currentState = MODMENU; // Retour au menu principal
-                    }
-                    break;
-
-                case SETTINGS:
-                    if (event.key.code == Keyboard::L) {
-                        currentState = MODMENU; // Retour au menu principal
-                    }
-                    break;
-
-                case EXIT:
-                    window.close();
-                    break;
-
-                default:
-                    break;
-                }
+                selmenu(window, player, menu, currentState, event, deltaTime.asSeconds());
+                                
             }
         }
 
         window.clear();
 
-        switch (currentState) {
-        
-        case MODMENU:
-            menu.drawMainMenu(window);
-            break;
+        selmenu(window, player, menu, currentState, event, deltaTime.asSeconds());
 
-        case PLAY:
-            player.update(deltaTime.asSeconds(), window);
-            window.draw(player.pSprite);
-            break;
-
-        case SETTINGS:
-            menu.drawSettings(window);
-            break;
-
-        case EXIT:
-            window.close();
-            break;  
-        }
-            
         window.display();
     }
 
