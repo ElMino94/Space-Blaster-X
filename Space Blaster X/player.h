@@ -17,6 +17,8 @@ private:
     float acceleration;
     float friction;
     int attaquespeed;
+    float currentAngle;  
+    float rotationSpeed;
 
 public:
     Texture pTexture;
@@ -25,11 +27,12 @@ public:
     ~Player() = default;
 
     bool isalive();
-    void move(float deltaTime);
+    void move(float deltaTime, RenderWindow& window);
+    void pivot(float deltaTime, RenderWindow& window);
     bool takedmg(int degat);
 
     void attack();
-    void update(float deltaTime);
+    void update(float deltaTime, RenderWindow& window);
 
     
 };

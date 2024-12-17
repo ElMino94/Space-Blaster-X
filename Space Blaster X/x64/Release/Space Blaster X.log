@@ -1,8 +1,8 @@
 ﻿  player.cpp
 x64\Release\player.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
   Génération de code en cours
-  2 of 92 functions ( 2.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
+  3 of 96 functions ( 3.1%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   Space Blaster X.vcxproj -> C:\Users\tgoncalves\Documents\GitHub\Space-Blaster-X\x64\Release\Space Blaster X.exe

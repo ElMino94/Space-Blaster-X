@@ -5,13 +5,18 @@ using namespace std;
 Player::Player(float x, float y){
     position = sf::Vector2f(x, y);
     velocity = sf::Vector2f(0.f, 0.f);
-    acceleration = 3750.f; // Vitesse de l'accélération
+    acceleration = 3500.f; // Vitesse de l'accélération
     friction = 0.975f; // Friction pour ralentir la vitesse
     invincible = false;
     pv = 100;
     attaquespeed = 1;
+    currentAngle = 0.f;  
+    rotationSpeed = 3.f;
+
     pTexture.loadFromFile("assetocorsa\\player.png");
     pSprite.setTexture(pTexture);
+    pSprite.setScale(Vector2f(0.5, 0.5));
+    pSprite.setOrigin(pTexture.getSize().x / 2.f, pTexture.getSize().y / 2.f);
 }
 
 bool Player::isalive(){
@@ -19,7 +24,7 @@ bool Player::isalive(){
     return pv > 0;
 }
 
-void Player::move(float deltaTime) {
+void Player::move(float deltaTime, RenderWindow& window) {
     Vector2f direction(0.f, 0.f);
 
     if (Keyboard::isKeyPressed(Keyboard::Z))
@@ -40,7 +45,49 @@ void Player::move(float deltaTime) {
     velocity *= friction;
     position += velocity * deltaTime;
 
+    Vector2u windowSize = window.getSize();
+    float spriteHalfWidth = pSprite.getGlobalBounds().width / 2.f;
+    float spriteHalfHeight = pSprite.getGlobalBounds().height / 2.f;
+
+    if (position.x - spriteHalfWidth < 0.f) {
+        position.x = spriteHalfWidth;
+    }
+    else if (position.x + spriteHalfWidth > windowSize.x) {
+        position.x = windowSize.x - spriteHalfWidth;
+    }
+
+    if (position.y - spriteHalfHeight < 0.f) {
+        position.y = spriteHalfHeight;
+    }
+    else if (position.y + spriteHalfHeight > windowSize.y) {
+        position.y = windowSize.y - spriteHalfHeight;
+    }
+
     pSprite.setPosition(position);
+}
+
+void Player::pivot(float deltaTime, RenderWindow& window) {
+    Vector2i mousePos = Mouse::getPosition(window);
+    Vector2f mouseWorldPos = window.mapPixelToCoords(mousePos);
+
+    float targetAngle = atan2(mouseWorldPos.y - position.y, mouseWorldPos.x - position.x) * 180.f / 3.14159f;
+    float angleDifference = targetAngle - currentAngle;
+
+    if (angleDifference > 180.f) {
+        angleDifference -= 360.f;
+    }
+    else if (angleDifference < -180.f) {
+        angleDifference += 360.f;
+    }
+
+    if (abs(angleDifference) > 0.1f) {  
+        currentAngle += angleDifference * rotationSpeed * deltaTime;  
+    }
+    else {
+        currentAngle = targetAngle;  
+    }
+    pSprite.setRotation(currentAngle+90);
+
 }
 bool Player::takedmg(int degat) {
 
@@ -54,9 +101,9 @@ bool Player::takedmg(int degat) {
 
 void Player::attack() {}
 
-void Player::update(float deltaTime) {
+void Player::update(float deltaTime, RenderWindow& window) {
 
-    Player::move(deltaTime);
-
+    Player::move(deltaTime, window);
+    Player::pivot(deltaTime, window);
 }
 
