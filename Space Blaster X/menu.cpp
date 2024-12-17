@@ -15,7 +15,7 @@ void MENU::initialisation() {
     if (!backgroundTexture.loadFromFile("assetocorsa\\image-fond-menu.jpg"))
         cerr << "Erreur : Impossible de charger l'image de fond !" << endl;
 
-    playTexture.loadFromFile("assetocorsa\\bp.png");
+    //playTexture.loadFromFile("assetocorsa\\bp.png");
     if (!playTexture.loadFromFile("assetocorsa\\bp.png"))
         cerr << "Erreur : Impossible de charger play.png !" << endl;
 
