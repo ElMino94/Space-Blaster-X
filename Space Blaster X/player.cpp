@@ -5,8 +5,8 @@ using namespace std;
 Player::Player(float x, float y){
     position = sf::Vector2f(x, y);
     velocity = sf::Vector2f(0.f, 0.f);
-    acceleration = 3500.f; // Vitesse de l'accélération
-    friction = 0.975f; // Friction pour ralentir la vitesse
+    acceleration = 3500.f; 
+    friction = 0.975f; 
     invincible = false;
     pv = 100;
     attaquespeed = 1;
@@ -17,11 +17,6 @@ Player::Player(float x, float y){
     pSprite.setTexture(pTexture);
     pSprite.setScale(Vector2f(0.5, 0.5));
     pSprite.setOrigin(pTexture.getSize().x / 2.f, pTexture.getSize().y / 2.f);
-}
-
-bool Player::isalive(){
-
-    return pv > 0;
 }
 
 void Player::move(float deltaTime, RenderWindow& window) {
@@ -97,6 +92,10 @@ bool Player::takedmg(int degat) {
         return false;
     }
     return true;
+}
+bool Player::isalive() {
+
+    return pv > 0;
 }
 
 void Player::attack() {}

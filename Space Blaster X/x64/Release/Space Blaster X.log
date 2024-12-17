@@ -1,17 +1,22 @@
 ﻿  caca.cpp
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\caca.cpp(24,71): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+C:\Users\tgoncalves\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(25,71): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
           with
           [
               T=float
           ]
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\caca.cpp(24,50): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+C:\Users\tgoncalves\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(25,50): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
           with
           [
               T=float
           ]
-  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  menu.cpp
+  mob.cpp
+  player.cpp
+  player.h
 x64\Release\player.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
   Génération de code en cours
-  All 92 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  92 of 96 functions (95.8%) were compiled, the rest were copied from previous compilation.
+    6 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
-  Space Blaster X.vcxproj -> C:\Users\trestoux\source\repos\Space Blaster X\x64\Release\Space Blaster X.exe
+  Space Blaster X.vcxproj -> C:\Users\tgoncalves\Documents\GitHub\Space-Blaster-X\x64\Release\Space Blaster X.exe
