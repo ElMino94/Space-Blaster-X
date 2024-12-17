@@ -10,7 +10,7 @@ void cursor() {
     
 }
 
-enum GameState{ MODMENU, PLAY, SETTINGS, EXIT };
+enum GameState { MODMENU, PLAY, SETTINGS, EXIT };
 
 int main()
 {
@@ -68,7 +68,7 @@ int main()
                     break;
 
                 case SETTINGS:
-                    if (event.key.code == Keyboard::BackSpace) {
+                    if (event.key.code == Keyboard::L) {
                         currentState = MODMENU; // Retour au menu principal
                     }
                     break;
