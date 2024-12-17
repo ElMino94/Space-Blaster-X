@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <cmath>
 #include "player.h"
 #include "menu.h"
 
@@ -133,7 +134,7 @@ int main()
             break;
 
         case PLAY:
-            player.update(deltaTime.asSeconds());
+            player.update(deltaTime.asSeconds(), window);
             window.draw(player.pSprite);
             break;
 
