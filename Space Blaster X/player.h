@@ -1,5 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+#include"projectile.h"
+#include <vector>
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
@@ -19,6 +21,7 @@ private:
     int attaquespeed;
     float currentAngle;  
     float rotationSpeed;
+    std::vector<Projectile> projectiles;
 
 public:
 

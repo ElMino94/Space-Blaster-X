@@ -99,7 +99,14 @@ bool Player::isalive() {
     return pv > 0;
 }
 
-void Player::attack() {}
+void Player::attack() {
+    float angle = currentAngle;  // L'angle de tir du joueur
+    float speed = 400.f;  // Vitesse du projectile
+    sf::Color color = sf::Color::Green;  // Couleur du projectile
+
+    // Créer un nouveau projectile à la position actuelle du joueur
+    projectiles.push_back(Projectile(position.x, position.y, angle, speed, color));
+}
 
 void Player::update(float deltaTime, RenderWindow& window) {
 

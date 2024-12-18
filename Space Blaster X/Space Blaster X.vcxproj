@@ -137,10 +137,12 @@
     <ClCompile Include="mob.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="player.h" />
+    <ClCompile Include="projectile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="menu.h" />
     <ClInclude Include="mob.h" />
+    <ClInclude Include="projectile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
