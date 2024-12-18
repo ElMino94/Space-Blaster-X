@@ -4,13 +4,13 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include <cmath>
 
 class Mob
 {
 protected:
 
     int pv;
-    bool invincible;
     sf::Vector2f position;
     sf::Vector2f velocity;
     float acceleration;
@@ -25,7 +25,7 @@ public:
     bool takedmg(int degat);
 
     virtual void attack();
-    virtual void update(float deltaTime);
+    virtual void update(float deltaTime, sf::Vector2f playerPosition, std::vector<Mob>& mobs, sf::RenderWindow& window);
 
     sf::CircleShape ship;
 

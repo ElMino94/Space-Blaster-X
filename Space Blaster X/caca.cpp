@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cmath>
 #include "player.h"
+#include "mob.h"
 #include "menu.h"
 
 using namespace std;
@@ -11,6 +12,8 @@ void cursor() {
     
 }
 
+vector<Mob> mobs;
+//vector<Projectile> projectiles
 enum GameState { MODMENU, PLAY, SETTINGS, EXIT };
 
 
@@ -50,6 +53,11 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
         break;
 
     case PLAY:
+        for (auto& mob : mobs)
+        {
+            mob.update(deltaTime, player.getPosition(), mobs, window);
+            window.draw(mob.ship);
+        }
         player.update(deltaTime, window);
         window.draw(player.pSprite);
         break;
@@ -79,6 +87,11 @@ int main()
     menu.initialisation();
 
     Player player(400.f, 300.f);
+    mobs.push_back(Mob(200.f, 400.f, 100));
+    mobs.push_back(Mob(300.f, 400.f, 100));
+    mobs.push_back(Mob(400.f, 400.f, 100));
+    mobs.push_back(Mob(500.f, 400.f, 100));
+    mobs.push_back(Mob(600.f, 400.f, 100));
     Clock clock;
 
     Texture pTexture;

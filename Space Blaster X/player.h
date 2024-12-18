@@ -21,11 +21,13 @@ private:
     float rotationSpeed;
 
 public:
+
+
     Texture pTexture;
     Sprite pSprite;
     Player(float x, float y);
     ~Player() = default;
-
+    Vector2f getPosition() const ;
     bool isalive();
     void move(float deltaTime, RenderWindow& window);
     void pivot(float deltaTime, RenderWindow& window);

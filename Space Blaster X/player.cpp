@@ -93,6 +93,7 @@ bool Player::takedmg(int degat) {
     }
     return true;
 }
+
 bool Player::isalive() {
 
     return pv > 0;
@@ -106,3 +107,6 @@ void Player::update(float deltaTime, RenderWindow& window) {
     Player::pivot(deltaTime, window);
 }
 
+sf::Vector2f Player::getPosition() const {
+    return position;
+}
