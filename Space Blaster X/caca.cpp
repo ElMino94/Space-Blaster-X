@@ -28,7 +28,7 @@ void playlevel(RenderWindow& window, Player& player, float deltaTime, Clock& mob
     switch (level) {
     case(1):
         spawnrate = 2;
-        spawnlong = 40;
+        spawnlong = 41;
         if (player.getscore() >= 2000) {
             levelClock.restart();
             mobSpawnClock.restart();
@@ -38,7 +38,7 @@ void playlevel(RenderWindow& window, Player& player, float deltaTime, Clock& mob
         break; // Ajouté pour éviter de tomber dans le case suivant
     case(2):
         spawnrate = 1;
-        spawnlong = 20;
+        spawnlong = 21;
         if (player.getscore() >= 4000) {
             levelClock.restart();
             mobSpawnClock.restart();
@@ -48,7 +48,7 @@ void playlevel(RenderWindow& window, Player& player, float deltaTime, Clock& mob
         break;
     case(3):
         spawnrate = 0.5;
-        spawnlong = 10;
+        spawnlong = 11;
         if (player.getscore() >= 5000) {
             mobs.push_back(Mob(400, 400, 1000, 2, 0.25, texture));
             level = 4;
