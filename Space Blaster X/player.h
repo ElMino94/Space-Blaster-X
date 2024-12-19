@@ -15,7 +15,7 @@ class Player
 {
 private:
 
-    int pv;
+
     bool invincible;
     Vector2f position;
     Vector2f velocity;
@@ -33,7 +33,7 @@ private:
 
 public:
 
-
+    int pv;
     Texture pTexture;
     Sprite pSprite;
     Player(float x, float y);

@@ -2,8 +2,8 @@
 #include <cmath>
 
 // Constructeur qui initialise les variables du Mob
-Mob::Mob(float x, float y, int hp, Texture& texture)
-    : position(x, y), pv(hp), velocity(0, 0), acceleration(500.f), friction(0.975f), texture(texture) {
+Mob::Mob(float x, float y, int hp, float scale, float attackCooldown, Texture& texture)
+    : position(x, y), pv(hp), velocity(0, 0), acceleration(500.f), friction(0.975f), scale(scale), attackCooldown(attackCooldown), texture(texture) {
     attackCooldown = 1;
     attackTimer = 0;
 
@@ -11,7 +11,7 @@ Mob::Mob(float x, float y, int hp, Texture& texture)
         std::cerr << "Erreur : impossible de charger 'assetocorsaship.png'" << std::endl;
     }
     shipSprite.setTexture(texture);
-    shipSprite.setScale(Vector2f(0.35, 0.35));
+    shipSprite.setScale(Vector2f(scale, scale));
     shipSprite.setOrigin(texture.getSize().x / 2.f, texture.getSize().y / 2.f);
 }
 
