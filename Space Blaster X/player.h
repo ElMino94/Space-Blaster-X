@@ -27,6 +27,7 @@ private:
     float rotationSpeed;
     std::vector<Projectile> projectiles;
     int score;
+    float maxSpeed;
 
 public:
 

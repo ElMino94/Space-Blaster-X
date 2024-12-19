@@ -3,7 +3,7 @@
 
 // Constructeur qui initialise les variables du Mob
 Mob::Mob(float x, float y, int hp, Texture texture)
-    : position(x, y), pv(hp), velocity(0, 0), acceleration(3500.f), friction(0.975f), texture(texture) {
+    : position(x, y), pv(hp), velocity(0, 0), acceleration(500.f), friction(0.975f), texture(texture) {
     attackCooldown = 1;
     attackTimer = 0;
 
@@ -59,10 +59,10 @@ void Mob::attack(sf::Vector2f playerPosition) {
 void Mob::update(float deltaTime, sf::Vector2f playerPosition, std::vector<Mob>& mobs, sf::RenderWindow& window, Player& player) {
     // Calcul de la distance entre le Mob et le joueur
     float distance = std::sqrt(std::pow(playerPosition.x - position.x, 2) + std::pow(playerPosition.y - position.y, 2));
-
-    // Direction vers le joueur
     sf::Vector2f direction = playerPosition - position;
-
+    // Direction vers le joueur
+    if (distance < 500) direction = -direction;
+      
     // Normaliser la direction (rendre le vecteur unitaire)
     if (distance != 0) {
         direction /= distance;

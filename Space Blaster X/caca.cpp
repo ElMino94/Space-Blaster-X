@@ -13,6 +13,7 @@ void cursor() {
 }
 
 vector<Mob> mobs;
+int level = 1;
 //vector<Projectile> projectiles
 enum GameState { MODMENU, PLAY, SETTINGS, EXIT };
 
@@ -53,6 +54,7 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
         break;
 
     case PLAY:
+        menu.drawplay(window, level);
         for (auto& mob : mobs)
         {
             mob.update(deltaTime, player.getPosition(), mobs, window, player);
@@ -81,7 +83,7 @@ int main()
 {
     
     RenderWindow window(VideoMode(1920, 1080), "Space Blaster X", Style::None);
-    window.setFramerateLimit(120);
+    window.setFramerateLimit(60);
 
     MENU menu; 
     menu.initialisation();
@@ -92,6 +94,10 @@ int main()
     mobs.push_back(Mob(300.f, 400.f, 100, texture));
     mobs.push_back(Mob(400.f, 400.f, 100, texture));
     mobs.push_back(Mob(500.f, 400.f, 100, texture));
+    mobs.push_back(Mob(000.f, 400.f, 100, texture));
+    mobs.push_back(Mob(500.f, 400.f, 100, texture));
+    mobs.push_back(Mob(500.f, 400.f, 100, texture));
+    mobs.push_back(Mob(800.f, 400.f, 100, texture));
     mobs.push_back(Mob(600.f, 400.f, 100, texture));
     Clock clock;
 
@@ -104,9 +110,7 @@ int main()
         Time deltaTime = clock.restart();
         Event event;
 
-        if (!texture.loadFromFile("assetocorsa//ship.png")) {
-            std::cerr << "Erreur : impossible de charger 'assetocorsaship.png'" << std::endl;
-        }
+        texture.loadFromFile("assetocorsa//ship.png");
 
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed)

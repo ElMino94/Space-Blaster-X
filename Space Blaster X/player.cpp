@@ -5,7 +5,7 @@ using namespace std;
 Player::Player(float x, float y){
     position = sf::Vector2f(x, y);
     velocity = sf::Vector2f(0.f, 0.f);
-    acceleration = 3500.f; 
+    acceleration = 500.f; 
     friction = 0.975f; 
     invincible = false;
     pv = 100;
@@ -14,10 +14,11 @@ Player::Player(float x, float y){
     currentAngle = 0.f;  
     rotationSpeed = 3.f;
     score = 0;
+    maxSpeed = 500.f;
 
     pTexture.loadFromFile("assetocorsa\\player.png");
     pSprite.setTexture(pTexture);
-    pSprite.setScale(Vector2f(0.5, 0.5));
+    pSprite.setScale(Vector2f(0.225, 0.225));
     pSprite.setOrigin(pTexture.getSize().x / 2.f, pTexture.getSize().y / 2.f);
 }
 
@@ -40,6 +41,12 @@ void Player::move(float deltaTime, RenderWindow& window) {
 
     velocity += direction * acceleration * deltaTime;
     velocity *= friction;
+
+    float speed = sqrt(velocity.x * velocity.x + velocity.y * velocity.y);
+    if (speed > maxSpeed) {
+        velocity = (velocity / speed) * maxSpeed; // Normaliser et appliquer la vitesse max
+    }
+
     position += velocity * deltaTime;
 
     Vector2u windowSize = window.getSize();

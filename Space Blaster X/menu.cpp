@@ -91,3 +91,25 @@ void MENU::drawExitConfirmation(RenderWindow& window) {
 
     window.draw(exitText);
 }
+
+void MENU::drawplay(RenderWindow& window, int level) {
+    
+    
+    
+    if (level == 1)  {
+        backgroundTexture.loadFromFile("assetocorsa\\backgroung.jpg");
+        backgroundSprite.setTexture(backgroundTexture);
+        window.draw(backgroundSprite);
+    }/*
+    else if (level == 2)  {
+        lvl2Texture.loadFromFile("assetocorsa\\lvl2.jpg");
+        lvl2Sprite.setTexture(lvl2Texture);
+        window.draw(lvl1Sprite);
+    }
+    else if (level == 3)  {
+        lvl3Texture.loadFromFile("assetocorsa\\lvl3.png");
+        lvl3Sprite.setTexture(lvl3Texture);
+        window.draw(lvl1Sprite);
+    }*/
+
+}

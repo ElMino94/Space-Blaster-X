@@ -17,6 +17,9 @@ public:
     void drawMainMenu(RenderWindow& window); // Affiche le menu principal
     void drawSettings(RenderWindow& window); // Affiche le menu des paramètres
     void drawExitConfirmation(RenderWindow& window); // Affiche un menu de confirmation de sortie
+    void drawplay(RenderWindow& window, int level); // Afficher lorque que le jeu ce lance
+
+
 
     Texture backgroundTexture;
     Sprite backgroundSprite;
@@ -29,6 +32,15 @@ public:
 
     Texture exitTexture;
     Sprite exitSprite;
+
+    Texture lvl1Texture;
+    Sprite lvl1Sprite;
+
+    Texture lvl2Texture;
+    Sprite lvl2Sprite;
+
+    Texture lvl3Texture;
+    Sprite lvl3Sprite;
 
     Font font;
     Text titleText;
