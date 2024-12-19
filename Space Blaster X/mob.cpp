@@ -2,7 +2,7 @@
 #include <cmath>
 
 // Constructeur qui initialise les variables du Mob
-Mob::Mob(float x, float y, int hp, Texture texture)
+Mob::Mob(float x, float y, int hp, Texture& texture)
     : position(x, y), pv(hp), velocity(0, 0), acceleration(500.f), friction(0.975f), texture(texture) {
     attackCooldown = 1;
     attackTimer = 0;
