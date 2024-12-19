@@ -15,7 +15,7 @@ void cursor() {
 vector<Mob> mobs;
 int level = 1;
 //vector<Projectile> projectiles
-enum GameState { MODMENU, PLAY, SETTINGS, EXIT };
+enum GameState { MODMENU, PLAY, SETTINGS, EXIT, PAUSE };
 
 
 void playlevel(RenderWindow& window, Player& player, float deltaTime){
@@ -67,6 +67,15 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
                     currentState = EXIT;
                 }
             }
+
+            else if (currentState == PAUSE) {
+                if (menu.playSprite.getGlobalBounds().contains(mousePos)) {
+                    currentState = PLAY;
+                }
+                else if (menu.exitSprite.getGlobalBounds().contains(mousePos)) {
+                    currentState = MODMENU;
+                }
+            }
         }
     }
 
@@ -76,8 +85,17 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
         break;
 
     case PLAY:
-        menu.drawplay(window, level);
-        playlevel(window, player, deltaTime);
+        if (Keyboard::isKeyPressed(Keyboard::Escape)) {
+            currentState = PAUSE;
+        }
+        else {
+            menu.drawplay(window, level);
+            playlevel(window, player, deltaTime);
+        }
+        break;
+
+    case PAUSE:
+        menu.drawPauseMenu(window);
         break;
 
     case SETTINGS:
@@ -127,7 +145,7 @@ int main()
             if (event.type == Event::Closed)
                 window.close();
         }
-        if (Keyboard::isKeyPressed(Keyboard::Escape))window.close();
+        if (Keyboard::isKeyPressed(Keyboard::M))window.close();
         window.clear();
         selmenu(window, player, menu, currentState, event, deltaTime.asSeconds());
 

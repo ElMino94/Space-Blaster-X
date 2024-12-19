@@ -115,3 +115,35 @@ void MENU::drawplay(RenderWindow& window, int level) {
     }
 
 }
+
+void MENU::drawPauseMenu(RenderWindow& window) {
+
+    window.draw(backgroundSprite);
+
+    // Charger la texture pour le bouton "Return"
+    if (!returnTexture.loadFromFile("assetocorsa\\return.png")) {
+        cerr << "Erreur : Impossible de charger return.png !" << endl;
+    }
+    returnSprite.setTexture(returnTexture);
+    returnSprite.setPosition(850, 400); // Position du bouton "Return"
+
+    // Charger la texture pour le bouton "Exit"
+    if (!exitTexture.loadFromFile("assetocorsa\\exit.png")) {
+        cerr << "Erreur : Impossible de charger exit.png !" << endl;
+    }
+    exitSprite.setTexture(exitTexture);
+    exitSprite.setPosition(850, 500); // Position du bouton "Exit"
+
+    // Dessiner le texte du titre "Pause"
+    Text pauseText;
+    pauseText.setFont(font);
+    pauseText.setString("PAUSED");
+    pauseText.setCharacterSize(75);
+    pauseText.setFillColor(Color::White);
+    pauseText.setPosition(800, 200);
+    window.draw(pauseText);
+
+    // Dessiner les sprites
+    window.draw(returnSprite); // Dessiner le bouton "Return"
+    window.draw(exitSprite);   // Dessiner le bouton "Exit"
+}
