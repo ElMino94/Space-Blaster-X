@@ -12,7 +12,7 @@ public:
 
     MENU(); // Constructeur
 
-    // M thodes pour initialiser et dessiner diff rents  crans du menu
+    // Methodes pour initialiser et dessiner diff rents  crans du menu
     void initialisation();       // Charger les textures, polices et positions
     void drawMainMenu(RenderWindow& window); // Affiche le menu principal
     void drawSettings(RenderWindow& window); // Affiche le menu des param tres
@@ -33,7 +33,6 @@ public:
     Texture exitTexture;
     Sprite exitSprite;
 
-    
     Texture returnTexture;   
     Sprite returnSprite;     
 

@@ -1,14 +1,14 @@
 ﻿  caca.cpp
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(57,71): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(57,71): warning C4244:         with
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(57,71): warning C4244:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(57,71): warning C4244:             T=float
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(57,71): warning C4244:         ]
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(57,50): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(57,50): warning C4244:         with
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(57,50): warning C4244:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(57,50): warning C4244:             T=float
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(57,50): warning C4244:         ]
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,71): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,71): warning C4244:         with
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,71): warning C4244:         [
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,71): warning C4244:             T=float
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,71): warning C4244:         ]
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,50): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,50): warning C4244:         with
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,50): warning C4244:         [
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,50): warning C4244:             T=float
+C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,50): warning C4244:         ]
   menu.cpp
   mob.cpp
 C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\mob.cpp(14,40): warning C4305: 'argument' : troncation de 'double' à 'T'

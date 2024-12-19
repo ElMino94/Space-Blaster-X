@@ -12,6 +12,10 @@ MENU::MENU() {
     lvl2Sprite.setTexture(lvl2Texture);
     lvl3Texture.loadFromFile("assetocorsa\\lvl3.png");
     lvl3Sprite.setTexture(lvl3Texture);
+    exitTexture.loadFromFile("assetocorsa\\exit.png");
+    exitSprite.setTexture(exitTexture);
+    returnTexture.loadFromFile("assetocorsa\\return.png");
+    returnSprite.setTexture(returnTexture);    
 }
 
 // M thode pour initialiser les textures, polices et sprites
@@ -100,8 +104,6 @@ void MENU::drawExitConfirmation(RenderWindow& window) {
 
 void MENU::drawplay(RenderWindow& window, int level) {
 
-
-
     if (level == 1) {
         window.draw(lvl1Sprite);
     }
@@ -120,21 +122,14 @@ void MENU::drawPauseMenu(RenderWindow& window) {
 
     window.draw(backgroundSprite);
 
-    // Charger la texture pour le bouton "Return"
-    if (!returnTexture.loadFromFile("assetocorsa\\return.png")) {
-        cerr << "Erreur : Impossible de charger return.png !" << endl;
-    }
+    
     returnSprite.setTexture(returnTexture);
-    returnSprite.setPosition(850, 400); // Position du bouton "Return"
+    returnSprite.setPosition(850, 400); 
 
-    // Charger la texture pour le bouton "Exit"
-    if (!exitTexture.loadFromFile("assetocorsa\\exit.png")) {
-        cerr << "Erreur : Impossible de charger exit.png !" << endl;
-    }
     exitSprite.setTexture(exitTexture);
-    exitSprite.setPosition(850, 500); // Position du bouton "Exit"
+    exitSprite.setPosition(850, 500); 
 
-    // Dessiner le texte du titre "Pause"
+    
     Text pauseText;
     pauseText.setFont(font);
     pauseText.setString("PAUSED");
@@ -143,7 +138,7 @@ void MENU::drawPauseMenu(RenderWindow& window) {
     pauseText.setPosition(800, 200);
     window.draw(pauseText);
 
-    // Dessiner les sprites
-    window.draw(returnSprite); // Dessiner le bouton "Return"
-    window.draw(exitSprite);   // Dessiner le bouton "Exit"
+    
+    window.draw(returnSprite); 
+    window.draw(exitSprite);   
 }
