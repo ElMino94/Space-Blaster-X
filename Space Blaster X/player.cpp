@@ -13,7 +13,7 @@ Player::Player(float x, float y){
     attackTimer = 0.f;
     currentAngle = 0.f;  
     rotationSpeed = 3.f;
-
+    score = 0;
 
     pTexture.loadFromFile("assetocorsa\\player.png");
     pSprite.setTexture(pTexture);
@@ -130,6 +130,8 @@ void Player::update(float deltaTime, sf::RenderWindow& window, std::vector<Mob>&
             if (it->checkCollisionE(mob.getBounds())) {
                 mob.takeDamage(100);  // Infliger des dégâts au mob
                 projectileHit = true;
+                score += 100;
+                cout << score;
                 break;
             }
         }
@@ -162,4 +164,7 @@ Vector2f Player::getPosition() const {
 
 FloatRect Player::getBounds() const {
     return pSprite.getGlobalBounds();
+}
+int Player::getscore() const {
+    return score;
 }

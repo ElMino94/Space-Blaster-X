@@ -26,6 +26,7 @@ private:
     float currentAngle;  
     float rotationSpeed;
     std::vector<Projectile> projectiles;
+    int score;
 
 public:
 
@@ -43,6 +44,7 @@ public:
     void attack(float deltaTime);
     void update(float deltaTime, RenderWindow& window, std::vector<Mob>& mobs);
     FloatRect getBounds() const;
+    int getscore() const;
     
 };
 
