@@ -90,6 +90,17 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
         }
     }
 
+    if (Keyboard::isKeyPressed(Keyboard::Escape)) {
+        // Si on est en mode jeu, basculer en pause
+        if (currentState == PLAY) {
+            currentState = PAUSE; // Passe au menu de pause
+        }
+        // Si on est en pause, basculer en mode jeu
+        else if (currentState == PAUSE) {
+            currentState = PLAY; // Reprendre le jeu
+        }
+    }
+
     switch (currentState) {
     case MODMENU:
         menu.drawMainMenu(window);
@@ -151,8 +162,16 @@ int main()
         }
         if (Keyboard::isKeyPressed(Keyboard::M))window.close();
         window.clear();
+        if (Keyboard::isKeyPressed(Keyboard::Escape)) {
+            if (currentState == PLAY) {
+                currentState = PAUSE;
+            }
+            else if (currentState == PAUSE) {
+                currentState = PLAY;
+            }
+        }
+        window.clear();
         selmenu(window, player, menu, currentState, event, deltaTime.asSeconds(), mobSpawnClock, levelClock, texture);
-
         window.display();
     }
 

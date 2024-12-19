@@ -127,7 +127,7 @@ void MENU::drawPauseMenu(RenderWindow& window) {
     returnSprite.setPosition(850, 400); 
 
     exitSprite.setTexture(exitTexture);
-    exitSprite.setPosition(850, 500); 
+    exitSprite.setPosition(850, 600); 
 
     
     Text pauseText;
