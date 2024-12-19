@@ -1,9 +1,23 @@
-﻿  mob.cpp
-C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\mob.cpp(58,20): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+﻿  caca.cpp
+C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\caca.cpp(28,71): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\caca.cpp(28,50): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+  menu.cpp
+  mob.cpp
+C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\mob.cpp(58,20): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+  player.cpp
+  player.h
+  projectile.cpp
+  Previous IPDB was built with incompatible compiler, fall back to full compilation.
 x64\Release\player.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
   Génération de code en cours
-  2 of 277 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  All 277 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Fin de la génération du code
-  Space Blaster X.vcxproj -> C:\Users\Téo\Desktop\GTech\Space-Blaster-X\x64\Release\Space Blaster X.exe
+  Space Blaster X.vcxproj -> C:\Users\trestoux\source\repos\Space Blaster X\x64\Release\Space Blaster X.exe
