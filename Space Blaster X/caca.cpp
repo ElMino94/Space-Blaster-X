@@ -18,7 +18,18 @@ int level = 1;
 enum GameState { MODMENU, PLAY, SETTINGS, EXIT, PAUSE };
 
 
-void playlevel(RenderWindow& window, Player& player, float deltaTime){
+void playlevel(RenderWindow& window, Player& player, float deltaTime, Clock& mobSpawnClock, Clock& levelClock, Texture texture){
+
+    float spawnTime = mobSpawnClock.getElapsedTime().asSeconds();
+    float totalLevelTime = levelClock.getElapsedTime().asSeconds();
+
+    // Générer un mob toutes les 2 secondes pendant les 40 premières secondes
+    if (totalLevelTime <= 40.0f && spawnTime >= 2.0f) {
+        mobs.push_back(Mob(400, 400, 100, texture)); // Ajoutez votre logique de création de mob
+        mobSpawnClock.restart();
+    }
+
+
     for (auto& mob : mobs)
     {
         mob.update(deltaTime, player.getPosition(), mobs, window, player);
@@ -48,7 +59,7 @@ void playlevel(RenderWindow& window, Player& player, float deltaTime){
     }
 }
 
-void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& currentState, Event& event, float deltaTime) {
+void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& currentState, Event& event, float deltaTime, Clock& mobSpawnClock, Clock& levelClock, Texture texture) {
 
     Vector2f mousePos;
 
@@ -85,17 +96,18 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
         break;
 
     case PLAY:
+
         if (Keyboard::isKeyPressed(Keyboard::Escape)) {
             currentState = PAUSE;
         }
         else {
             menu.drawplay(window, level);
-            playlevel(window, player, deltaTime);
+            playlevel(window, player, deltaTime, mobSpawnClock, levelClock, texture);
         }
         break;
 
     case PAUSE:
-        menu.drawPauseMenu(window);
+        menu.drawPauseMenu(window);   
         break;
 
     case SETTINGS:
@@ -109,29 +121,21 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
 }
 
 
-
-
-
-
 int main()
 {
 
     RenderWindow window(VideoMode(1920, 1080), "Space Blaster X", Style::None);
     window.setFramerateLimit(120);
-    Clock spawnCd;
+    
     MENU menu;
     menu.initialisation();
     Texture texture;
 
     Player player(400.f, 300.f);
-    for (size_t i = 0; i < 20; i++)
-    {
-        mobs.push_back(Mob(200.f, 400.f, 100, texture));
-    }
-
+    
     Clock clock;
-
-
+    Clock mobSpawnClock; // Horloge pour gérer l'apparition des mobs
+    Clock levelClock;    // Horloge pour le temps total du niveau
 
     GameState currentState = MODMENU;
 
@@ -147,7 +151,7 @@ int main()
         }
         if (Keyboard::isKeyPressed(Keyboard::M))window.close();
         window.clear();
-        selmenu(window, player, menu, currentState, event, deltaTime.asSeconds());
+        selmenu(window, player, menu, currentState, event, deltaTime.asSeconds(), mobSpawnClock, levelClock, texture);
 
         window.display();
     }
