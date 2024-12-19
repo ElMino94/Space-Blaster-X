@@ -161,6 +161,11 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
         break;
 
     case PLAY:
+        if (!player.isalive())
+        {
+            currentState = MODMENU;
+            player.pv = 100;
+        }
 
         if (Keyboard::isKeyPressed(Keyboard::Escape)) {
             currentState = PAUSE;
