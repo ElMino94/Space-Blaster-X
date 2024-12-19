@@ -18,13 +18,13 @@ int level = 1;
 enum GameState { MODMENU, PLAY, SETTINGS, EXIT, PAUSE };
 
 
-void playlevel(RenderWindow& window, Player& player, float deltaTime, Clock& mobSpawnClock, Clock& levelClock, Texture texture){
+void playlevel(RenderWindow& window, Player& player, float deltaTime, Clock& mobSpawnClock, Clock& levelClock, Texture& texture){
 
     float spawnTime = mobSpawnClock.getElapsedTime().asSeconds();
     float totalLevelTime = levelClock.getElapsedTime().asSeconds();
 
     // Générer un mob toutes les 2 secondes pendant les 40 premières secondes
-    if (totalLevelTime <= 40.0f && spawnTime >= 2.0f) {
+    if (totalLevelTime <= 41.0f && spawnTime >= 2.0f) {
         mobs.push_back(Mob(400, 400, 100, texture)); // Ajoutez votre logique de création de mob
         mobSpawnClock.restart();
     }
@@ -59,7 +59,7 @@ void playlevel(RenderWindow& window, Player& player, float deltaTime, Clock& mob
     }
 }
 
-void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& currentState, Event& event, float deltaTime, Clock& mobSpawnClock, Clock& levelClock, Texture texture) {
+void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& currentState, Event& event, float deltaTime, Clock& mobSpawnClock, Clock& levelClock, Texture& texture) {
 
     Vector2f mousePos;
 
@@ -141,8 +141,10 @@ int main()
     MENU menu;
     menu.initialisation();
     Texture texture;
-
-    Player player(400.f, 300.f);
+    if (!texture.loadFromFile("assetocorsa//ship.png")) {
+        cerr << "Erreur : Impossible de charger la texture." << endl;
+        return -1; // Terminez le programme si la texture ne se charge pas
+    }    Player player(400.f, 300.f);
     
     Clock clock;
     Clock mobSpawnClock; // Horloge pour gérer l'apparition des mobs
@@ -154,7 +156,7 @@ int main()
         Time deltaTime = clock.restart();
         Event event;
 
-        texture.loadFromFile("assetocorsa//ship.png");
+        
 
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed)
