@@ -20,12 +20,13 @@ protected:
     std::vector<Projectile> projectiles;
     float attackCooldown;
     float attackTimer;
+    float scale;
 
 public:
     Texture texture;
     Sprite shipSprite;
 
-    Mob(float x, float y, int hp, Texture& texture);
+    Mob(float x, float y, int hp, float scale, float attackCooldown, Texture& texture);
     ~Mob() = default;
 
     bool isalive();

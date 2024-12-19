@@ -112,7 +112,7 @@ void MENU::drawplay(RenderWindow& window, int level) {
         
         window.draw(lvl2Sprite);
     }
-    else if (level == 3) {
+    else if (level == 3 || level == 4) {
         
         window.draw(lvl3Sprite);
     }

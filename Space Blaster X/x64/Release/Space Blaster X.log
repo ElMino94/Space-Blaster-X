@@ -1,18 +1,20 @@
 ﻿  caca.cpp
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,71): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,71): warning C4244:         with
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,71): warning C4244:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,71): warning C4244:             T=float
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,71): warning C4244:         ]
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,50): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,50): warning C4244:         with
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,50): warning C4244:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,50): warning C4244:             T=float
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(68,50): warning C4244:         ]
+C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\caca.cpp(90,39): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\caca.cpp(111,71): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\caca.cpp(111,71): warning C4244:         with
+C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\caca.cpp(111,71): warning C4244:         [
+C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\caca.cpp(111,71): warning C4244:             T=float
+C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\caca.cpp(111,71): warning C4244:         ]
+C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\caca.cpp(111,50): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\caca.cpp(111,50): warning C4244:         with
+C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\caca.cpp(111,50): warning C4244:         [
+C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\caca.cpp(111,50): warning C4244:             T=float
+C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\caca.cpp(111,50): warning C4244:         ]
+C:\Users\Téo\Desktop\GTech\Space-Blaster-X\Space Blaster X\caca.cpp(194,15): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
 x64\Release\player.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
   Génération de code en cours
-  0 of 282 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
+  4 of 282 functions ( 1.4%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
-  Space Blaster X.vcxproj -> C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\x64\Release\Space Blaster X.exe
+  Space Blaster X.vcxproj -> C:\Users\Téo\Desktop\GTech\Space-Blaster-X\x64\Release\Space Blaster X.exe

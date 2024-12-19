@@ -18,45 +18,88 @@ int level = 1;
 enum GameState { MODMENU, PLAY, SETTINGS, EXIT, PAUSE };
 
 
-void playlevel(RenderWindow& window, Player& player, float deltaTime, Clock& mobSpawnClock, Clock& levelClock, Texture& texture){
-
+void playlevel(RenderWindow& window, Player& player, float deltaTime, Clock& mobSpawnClock, Clock& levelClock, Texture& texture) {
     float spawnTime = mobSpawnClock.getElapsedTime().asSeconds();
     float totalLevelTime = levelClock.getElapsedTime().asSeconds();
+    float spawnrate;
+    float spawnlong;
 
-   
-    if (totalLevelTime <= 41.0f && spawnTime >= 2.0f) {
-        mobs.push_back(Mob(400, 400, 100, texture)); // Ajoutez votre logique de création de mob
-        mobSpawnClock.restart();
-    }
-
-
-    for (auto& mob : mobs)
-    {
-        mob.update(deltaTime, player.getPosition(), mobs, window, player);
-        window.draw(mob.shipSprite);
-    }
-    player.update(deltaTime, window, mobs);
-    window.draw(player.pSprite);
-    switch (level)
-    {
+    // Définir les paramètres selon le niveau
+    switch (level) {
     case(1):
+        spawnrate = 2;
+        spawnlong = 40;
         if (player.getscore() >= 2000) {
+            levelClock.restart();
+            mobSpawnClock.restart();
             level = 2;
             break;
         }
+        break; // Ajouté pour éviter de tomber dans le case suivant
     case(2):
-        if (player.getscore() >= 4500) {
+        spawnrate = 1;
+        spawnlong = 20;
+        if (player.getscore() >= 4000) {
+            levelClock.restart();
+            mobSpawnClock.restart();
             level = 3;
             break;
         }
+        break;
     case(3):
+        spawnrate = 0.5;
+        spawnlong = 10;
         if (player.getscore() >= 5000) {
+            mobs.push_back(Mob(400, 400, 1000, 2, 0.25, texture));
             level = 4;
             break;
         }
+        break;
     default:
         break;
     }
+
+    // Générer un mob selon le temps
+    if (totalLevelTime <= spawnlong && spawnTime >= spawnrate) {
+        // Générer une position aléatoire sur un bord de l'écran
+        int screenWidth = window.getSize().x;
+        int screenHeight = window.getSize().y;
+        float x, y;
+
+        // Choisir un bord aléatoire
+        int edge = std::rand() % 4; // 0 = haut, 1 = bas, 2 = gauche, 3 = droite
+        switch (edge) {
+        case 0: // Haut
+            x = static_cast<float>(std::rand() % screenWidth);
+            y = 0.f;
+            break;
+        case 1: // Bas
+            x = static_cast<float>(std::rand() % screenWidth);
+            y = static_cast<float>(screenHeight);
+            break;
+        case 2: // Gauche
+            x = 0.f;
+            y = static_cast<float>(std::rand() % screenHeight);
+            break;
+        case 3: // Droite
+            x = static_cast<float>(screenWidth);
+            y = static_cast<float>(std::rand() % screenHeight);
+            break;
+        }
+
+        mobs.push_back(Mob(x, y, 100, 0.35, 1, texture));
+        mobSpawnClock.restart();
+    }
+
+    // Mettre à jour et dessiner les mobs
+    for (auto& mob : mobs) {
+        mob.update(deltaTime, player.getPosition(), mobs, window, player);
+        window.draw(mob.shipSprite);
+    }
+
+    // Mettre à jour et dessiner le joueur
+    player.update(deltaTime, window, mobs);
+    window.draw(player.pSprite);
 }
 
 void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& currentState, Event& event, float deltaTime, Clock& mobSpawnClock, Clock& levelClock, Texture& texture) {
@@ -69,6 +112,7 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
 
             if (currentState == MODMENU) {
                 if (menu.playSprite.getGlobalBounds().contains(mousePos)) {
+                    levelClock.restart();
                     currentState = PLAY;
                 }
                 else if (menu.settingsSprite.getGlobalBounds().contains(mousePos)) {
@@ -147,7 +191,7 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
 
 int main()
 {
-
+    srand(time(0));
     RenderWindow window(VideoMode(1920, 1080), "Space Blaster X", Style::None);
     window.setFramerateLimit(120);
     
