@@ -3,19 +3,20 @@
 using namespace sf;
 using namespace std;
 
+// Appel automatique pour charger textures/polices
 MENU::MENU() {
-    initialisation(); // Appel automatique pour charger textures/polices
+    initialisation(); 
 }
 
 // Méthode pour initialiser les textures, polices et sprites
 void MENU::initialisation() {
-    // Chargement des textures
+    
 
     backgroundTexture.loadFromFile("assetocorsa\\background.jpg");
     if (!backgroundTexture.loadFromFile("assetocorsa\\background.jpg"))
         cerr << "Erreur : Impossible de charger l'image de fond !" << endl;
 
-    //playTexture.loadFromFile("assetocorsa\\bp.png");
+    
     if (!playTexture.loadFromFile("assetocorsa\\bp.png"))
         cerr << "Erreur : Impossible de charger play.png !" << endl;
 
@@ -40,7 +41,7 @@ void MENU::initialisation() {
     exitSprite.setTexture(exitTexture);
     exitSprite.setPosition(50, 500);
 
-    // Chargement de la police et configuration du texte
+    
     if (!font.loadFromFile("assetocorsa\\Neon Energy x.ttf")) {
         cerr << "Erreur : Impossible de charger la police !" << endl;
         return;
