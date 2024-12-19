@@ -13,7 +13,7 @@ Player::Player(float x, float y) {
     attackTimer = 0.f;
     currentAngle = 0.f;
     rotationSpeed = 3.f;
-    score = 0;
+    score = 1900;
 
     maxSpeed = 1000.f;
 

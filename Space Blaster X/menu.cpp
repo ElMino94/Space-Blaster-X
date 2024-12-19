@@ -109,11 +109,11 @@ void MENU::drawplay(RenderWindow& window, int level) {
     }
     else if (level == 2) {
         
-        window.draw(lvl1Sprite);
+        window.draw(lvl2Sprite);
     }
     else if (level == 3) {
         
-        window.draw(lvl1Sprite);
+        window.draw(lvl3Sprite);
     }
 
 }

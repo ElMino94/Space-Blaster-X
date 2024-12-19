@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\caca.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|solutionrelative:Space Blaster X\\caca.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|solutionrelative:Space Blaster X\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|solutionrelative:Space Blaster X\\menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\caca.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|solutionrelative:Space Blaster X\\caca.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\mob.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|solutionrelative:Space Blaster X\\mob.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|solutionrelative:Space Blaster X\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{620FD8F9-35C4-44C4-8730-68FC935DD0AB}|Space Blaster X\\Space Blaster X.vcxproj|C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\mob.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
@@ -86,15 +86,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "player.cpp",
               "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\player.cpp",
               "RelativeDocumentMoniker": "Space Blaster X\\player.cpp",
               "ToolTip": "C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\player.cpp",
               "RelativeToolTip": "Space Blaster X\\player.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-13T10:08:08.565Z"
+              "WhenOpened": "2024-12-13T10:08:08.565Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -110,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "mob.h",
               "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\mob.h",
               "RelativeDocumentMoniker": "Space Blaster X\\mob.h",
@@ -118,12 +119,11 @@
               "RelativeToolTip": "Space Blaster X\\mob.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-13T10:08:31.754Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-13T10:08:31.754Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "menu.h",
               "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\menu.h",
               "RelativeDocumentMoniker": "Space Blaster X\\menu.h",
@@ -131,8 +131,7 @@
               "RelativeToolTip": "Space Blaster X\\menu.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-16T13:50:21.851Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T13:50:21.851Z"
             },
             {
               "$type": "Document",
@@ -142,14 +141,14 @@
               "RelativeDocumentMoniker": "Space Blaster X\\menu.cpp",
               "ToolTip": "C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\menu.cpp",
               "RelativeToolTip": "Space Blaster X\\menu.cpp",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAHMAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-16T13:50:09.278Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "caca.cpp",
               "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Documents\\GitHub\\Space-Blaster-X\\Space Blaster X\\caca.cpp",
               "RelativeDocumentMoniker": "Space Blaster X\\caca.cpp",
