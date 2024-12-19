@@ -1,5 +1,4 @@
 ﻿  caca.cpp
-  menu.cpp
 C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(29,71): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
 C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(29,71): warning C4244:         with
 C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(29,71): warning C4244:         [
@@ -11,27 +10,3 @@ C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(2
 C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(29,50): warning C4244:             T=float
 C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(29,50): warning C4244:         ]
 C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\caca.cpp(77,1): error C1075: '{' : jeton correspondant introuvable
-  mob.cpp
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\mob.cpp(14,40): warning C4305: 'argument' : troncation de 'double' à 'T'
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\mob.cpp(14,40): warning C4305:         with
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\mob.cpp(14,40): warning C4305:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\mob.cpp(14,40): warning C4305:             T=float
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\mob.cpp(14,40): warning C4305:         ]
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\mob.cpp(14,34): warning C4305: 'argument' : troncation de 'double' à 'T'
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\mob.cpp(14,34): warning C4305:         with
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\mob.cpp(14,34): warning C4305:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\mob.cpp(14,34): warning C4305:             T=float
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\mob.cpp(14,34): warning C4305:         ]
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\mob.cpp(60,20): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-  player.cpp
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\player.cpp(22,38): warning C4305: 'argument' : troncation de 'double' à 'T'
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\player.cpp(22,38): warning C4305:         with
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\player.cpp(22,38): warning C4305:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\player.cpp(22,38): warning C4305:             T=float
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\player.cpp(22,38): warning C4305:         ]
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\player.cpp(22,31): warning C4305: 'argument' : troncation de 'double' à 'T'
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\player.cpp(22,31): warning C4305:         with
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\player.cpp(22,31): warning C4305:         [
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\player.cpp(22,31): warning C4305:             T=float
-C:\Users\PC\OneDrive\Documents\GitHub\Space-Blaster-X\Space Blaster X\player.cpp(22,31): warning C4305:         ]
-  player.h

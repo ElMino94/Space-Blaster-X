@@ -7,7 +7,7 @@ Mob::Mob(float x, float y, int hp, Texture texture)
     attackCooldown = 1;
     attackTimer = 0;
 
-    if (!texture.loadFromFile("assetocorsa//ship.png")) {
+    if (!texture.loadFromFile("assetocorsa\\ship.png")) {
         std::cerr << "Erreur : impossible de charger 'assetocorsaship.png'" << std::endl;
     }
     shipSprite.setTexture(texture);
