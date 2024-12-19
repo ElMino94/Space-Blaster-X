@@ -56,7 +56,7 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
         for (auto& mob : mobs)
         {
             mob.update(deltaTime, player.getPosition(), mobs, window, player);
-            window.draw(mob.ship);
+            window.draw(mob.shipSprite);
         }
         player.update(deltaTime, window, mobs);
         window.draw(player.pSprite);
@@ -85,20 +85,17 @@ int main()
 
     MENU menu; 
     menu.initialisation();
-
+    Texture texture;
+    
     Player player(400.f, 300.f);
-    mobs.push_back(Mob(200.f, 400.f, 100));
-    mobs.push_back(Mob(300.f, 400.f, 100));
-    mobs.push_back(Mob(400.f, 400.f, 100));
-    mobs.push_back(Mob(500.f, 400.f, 100));
-    mobs.push_back(Mob(600.f, 400.f, 100));
+    mobs.push_back(Mob(200.f, 400.f, 100, texture));
+    mobs.push_back(Mob(300.f, 400.f, 100, texture));
+    mobs.push_back(Mob(400.f, 400.f, 100, texture));
+    mobs.push_back(Mob(500.f, 400.f, 100, texture));
+    mobs.push_back(Mob(600.f, 400.f, 100, texture));
     Clock clock;
 
-    Texture pTexture;
-    pTexture.loadFromFile("assetocorsa\\player.png");
-    player.pSprite.setTexture(pTexture);
 
-    
     
     // Gestion des états du jeu
     GameState currentState = MODMENU;
@@ -106,6 +103,10 @@ int main()
     while (window.isOpen()) {
         Time deltaTime = clock.restart();
         Event event;
+
+        if (!texture.loadFromFile("assetocorsa//ship.png")) {
+            std::cerr << "Erreur : impossible de charger 'assetocorsaship.png'" << std::endl;
+        }
 
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed)

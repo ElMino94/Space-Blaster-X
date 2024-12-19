@@ -2,27 +2,31 @@
 #include <cmath>
 
 // Constructeur qui initialise les variables du Mob
-Mob::Mob(float x, float y, int hp) : position(x, y), pv(hp), velocity(0, 0), acceleration(3500.f), friction(0.975f) {
+Mob::Mob(float x, float y, int hp, Texture texture)
+    : position(x, y), pv(hp), velocity(0, 0), acceleration(3500.f), friction(0.975f), texture(texture) {
+    attackCooldown = 1;
+    attackTimer = 0;
 
-    attackCooldown = 1; // Timer pour limiter la fréquence d'attaque
-    attackTimer = 0; // Temps écoulé depuis la dernière attaque
-    // Initialisation du cercle représentant le vaisseau
-    ship.setRadius(20.f);  // Rayon du vaisseau
-    ship.setFillColor(sf::Color::Red);  // Couleur du vaisseau
-    ship.setPosition(position);  // Position initiale du vaisseau
+    if (!texture.loadFromFile("assetocorsa//ship.png")) {
+        std::cerr << "Erreur : impossible de charger 'assetocorsaship.png'" << std::endl;
+    }
+    shipSprite.setTexture(texture);
+    shipSprite.setScale(Vector2f(0.35, 0.35));
+    shipSprite.setOrigin(texture.getSize().x / 2.f, texture.getSize().y / 2.f);
 }
 
+
+ 
 // Vérifie si le Mob est encore en vie
 bool Mob::isalive() {
     return pv > 0;
 }
-
 // Déplace le Mob en fonction des coordonnées x et y
 void Mob::move(int dx, int dy) {
     // Applique la vitesse (velocity) à la position
     position.x += dx * velocity.x;
     position.y += dy * velocity.y;
-    ship.setPosition(position);  // Met à jour la position du sprite
+    shipSprite.setPosition(position);  // Met à jour la position du sprite
 }
 
 // Applique des dégâts au Mob et retourne si le Mob est toujours en vie
@@ -52,7 +56,6 @@ void Mob::attack(sf::Vector2f playerPosition) {
     }
 }
 
-// Mise à jour du Mob à chaque frame
 void Mob::update(float deltaTime, sf::Vector2f playerPosition, std::vector<Mob>& mobs, sf::RenderWindow& window, Player& player) {
     // Calcul de la distance entre le Mob et le joueur
     float distance = std::sqrt(std::pow(playerPosition.x - position.x, 2) + std::pow(playerPosition.y - position.y, 2));
@@ -65,29 +68,23 @@ void Mob::update(float deltaTime, sf::Vector2f playerPosition, std::vector<Mob>&
         direction /= distance;
     }
 
-    // Si la distance est inférieure à 400 pixels, on recule (inverse la direction)
-    if (distance < 400.f) {
-        direction = -direction;
-    }
+    // Calcul de l'angle pour que le Mob regarde le joueur
+    float angleToPlayer = std::atan2(direction.y, direction.x) * 180.f / 3.14159f; // Convertir en degrés
+    shipSprite.setRotation(angleToPlayer + 90.f); // +90° pour aligner avec l'axe vertical du sprite
 
-    // Applique l'accélération dans la direction calculée
+    // Applique l'accélération dans la direction calculée (si nécessaire pour mouvement)
     velocity += direction * acceleration * deltaTime;
 
     // Appliquer la friction : on multiplie la vitesse par un facteur inférieur à 1 pour ralentir
     velocity *= friction;
 
-    // Limiter la vitesse du mob pour qu'il ne devienne pas trop rapide
-    float maxSpeed = 3000;  // Limite la vitesse maximale
-    if (velocity.x > maxSpeed) velocity.x = maxSpeed;
-    if (velocity.y > maxSpeed) velocity.y = maxSpeed;
-
-    // Mise à jour de la position du Mob en fonction de la vitesse (velocity)
+    // Mise à jour de la position en fonction de la vitesse
     position += velocity * deltaTime;
 
-    // Vérification de la collision avec les bords de l'écran
+    // Vérification des collisions avec les bords de l'écran
     sf::Vector2u windowSize = window.getSize();
-    float spriteHalfWidth = ship.getGlobalBounds().width / 2.f;
-    float spriteHalfHeight = ship.getGlobalBounds().height / 2.f;
+    float spriteHalfWidth = shipSprite.getGlobalBounds().width / 2.f;
+    float spriteHalfHeight = shipSprite.getGlobalBounds().height / 2.f;
 
     if (position.x - spriteHalfWidth < 0.f) {
         position.x = spriteHalfWidth;
@@ -103,49 +100,50 @@ void Mob::update(float deltaTime, sf::Vector2f playerPosition, std::vector<Mob>&
         position.y = windowSize.y - spriteHalfHeight;
     }
 
-    // Vérification de la collision avec les autres Mobs
+    // Gérer les collisions entre Mobs
     for (Mob& other : mobs) {
-        if (&other != this) {  // S'assurer qu'on ne vérifie pas la collision avec soi-même
+        if (&other != this) {
             float dx = position.x - other.position.x;
             float dy = position.y - other.position.y;
             float distanceBetweenMobs = std::sqrt(dx * dx + dy * dy);
-            float minDistance = ship.getRadius() * 2;  // Distance minimale (la taille des 2 Mobs)
+            float spriteHalfWidth = shipSprite.getGlobalBounds().width / 2.f;
+            float spriteHalfHeight = shipSprite.getGlobalBounds().height / 2.f;
+            float minDistance = spriteHalfWidth + spriteHalfHeight;
 
             if (distanceBetweenMobs < minDistance) {
-                // Calculer la direction de répulsion
                 sf::Vector2f repulsionDirection = sf::Vector2f(dx, dy) / distanceBetweenMobs;
-                float overlap = minDistance - distanceBetweenMobs;  // Calculer le chevauchement
-
-                // Déplacer le Mob à l'extérieur du chevauchement
+                float overlap = minDistance - distanceBetweenMobs;
                 position += repulsionDirection * overlap;
             }
         }
     }
+
+    // Gérer les projectiles
     for (auto it = projectiles.begin(); it != projectiles.end(); ) {
         it->update(deltaTime);
         it->render(window);
 
-        // Vérifier si le projectile touche le joueur
         if (it->checkCollisionP(player.getBounds())) {
-            player.takedmg(34);  // Infliger des dégâts au joueur (ajuste la valeur de dégâts si nécessaire)
-            it = projectiles.erase(it);  // Supprimer le projectile de la liste
+            player.takedmg(34);
+            it = projectiles.erase(it);
+        }
+        else if (it->isOutOfBounds(window)) {
+            it = projectiles.erase(it);
         }
         else {
-            // Supprimer les projectiles qui sortent des limites de la fenêtre
-            if (it->isOutOfBounds(window)) {
-                it = projectiles.erase(it);
-            }
-            else {
-                ++it;  // Passer au prochain projectile
-            }
+            ++it;
         }
     }
-        attackTimer += deltaTime;
-        attack(playerPosition);
-        // Met à jour la position du sprite du Mob
-        ship.setPosition(position);
+
+    attackTimer += deltaTime;
+    attack(playerPosition);
+
+    // Mise à jour de la position du sprite
+    shipSprite.setPosition(position);
 }
 
+
+
 sf::FloatRect Mob::getBounds() const {
-    return ship.getGlobalBounds();
+    return shipSprite.getGlobalBounds();
 }

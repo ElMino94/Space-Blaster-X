@@ -22,7 +22,11 @@ protected:
     float attackTimer; 
 
 public:
-    Mob(float x, float y, int hp);
+
+    Texture texture;
+    Sprite shipSprite;
+
+    Mob(float x, float y, int hp, Texture texture);
     ~Mob() = default;
 
     bool isalive();
