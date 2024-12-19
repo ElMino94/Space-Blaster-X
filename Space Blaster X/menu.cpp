@@ -8,6 +8,10 @@ MENU::MENU() {
     initialisation();
     lvl1Texture.loadFromFile("assetocorsa\\lvl1.jpg");
     lvl1Sprite.setTexture(lvl1Texture);
+    lvl2Texture.loadFromFile("assetocorsa\\lvl2.jpg");
+    lvl2Sprite.setTexture(lvl2Texture);
+    lvl3Texture.loadFromFile("assetocorsa\\lvl3.png");
+    lvl3Sprite.setTexture(lvl3Texture);
 }
 
 // M thode pour initialiser les textures, polices et sprites
@@ -102,13 +106,11 @@ void MENU::drawplay(RenderWindow& window, int level) {
         window.draw(lvl1Sprite);
     }
     else if (level == 2) {
-        lvl2Texture.loadFromFile("assetocorsa\\lvl2.jpg");
-        lvl2Sprite.setTexture(lvl2Texture);
+        
         window.draw(lvl1Sprite);
     }
     else if (level == 3) {
-        lvl3Texture.loadFromFile("assetocorsa\\lvl3.png");
-        lvl3Sprite.setTexture(lvl3Texture);
+        
         window.draw(lvl1Sprite);
     }
 

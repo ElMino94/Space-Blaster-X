@@ -18,7 +18,35 @@ int level = 1;
 enum GameState { MODMENU, PLAY, SETTINGS, EXIT };
 
 
-
+void playlevel(RenderWindow& window, Player& player, float deltaTime){
+    for (auto& mob : mobs)
+    {
+        mob.update(deltaTime, player.getPosition(), mobs, window, player);
+        window.draw(mob.shipSprite);
+    }
+    player.update(deltaTime, window, mobs);
+    window.draw(player.pSprite);
+    switch (level)
+    {
+    case(1):
+        if (player.getscore() >= 2000) {
+            level = 2;
+            break;
+        }
+    case(2):
+        if (player.getscore() >= 4500) {
+            level = 3;
+            break;
+        }
+    case(3):
+        if (player.getscore() >= 5000) {
+            level = 4;
+            break;
+        }
+    default:
+        break;
+    }
+}
 
 void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& currentState, Event& event, float deltaTime) {
 
@@ -49,13 +77,7 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
 
     case PLAY:
         menu.drawplay(window, level);
-        for (auto& mob : mobs)
-        {
-            mob.update(deltaTime, player.getPosition(), mobs, window, player);
-            window.draw(mob.shipSprite);
-        }
-        player.update(deltaTime, window, mobs);
-        window.draw(player.pSprite);
+        playlevel(window, player, deltaTime);
         break;
 
     case SETTINGS:
@@ -78,21 +100,17 @@ int main()
 
     RenderWindow window(VideoMode(1920, 1080), "Space Blaster X", Style::None);
     window.setFramerateLimit(120);
-
+    Clock spawnCd;
     MENU menu;
     menu.initialisation();
     Texture texture;
 
     Player player(400.f, 300.f);
-    mobs.push_back(Mob(200.f, 400.f, 100, texture));
-    mobs.push_back(Mob(300.f, 400.f, 100, texture));
-    mobs.push_back(Mob(400.f, 400.f, 100, texture));
-    mobs.push_back(Mob(500.f, 400.f, 100, texture));
-    mobs.push_back(Mob(000.f, 400.f, 100, texture));
-    mobs.push_back(Mob(500.f, 400.f, 100, texture));
-    mobs.push_back(Mob(500.f, 400.f, 100, texture));
-    mobs.push_back(Mob(800.f, 400.f, 100, texture));
-    mobs.push_back(Mob(600.f, 400.f, 100, texture));
+    for (size_t i = 0; i < 20; i++)
+    {
+        mobs.push_back(Mob(200.f, 400.f, 100, texture));
+    }
+
     Clock clock;
 
 
