@@ -9,9 +9,11 @@ Player::Player(float x, float y){
     friction = 0.975f; 
     invincible = false;
     pv = 100;
-    attaquespeed = 1;
+    attaquespeed = 0.5;
+    attackTimer = 0.f;
     currentAngle = 0.f;  
     rotationSpeed = 3.f;
+
 
     pTexture.loadFromFile("assetocorsa\\player.png");
     pSprite.setTexture(pTexture);
@@ -99,20 +101,50 @@ bool Player::isalive() {
     return pv > 0;
 }
 
-void Player::attack() {
-    float angle = currentAngle;  // L'angle de tir du joueur
-    float speed = 400.f;  // Vitesse du projectile
-    sf::Color color = sf::Color::Green;  // Couleur du projectile
+void Player::attack(float deltaTime) {
+    attackTimer += deltaTime;
+    if (Mouse::isButtonPressed(Mouse::Left) && attackTimer >= attaquespeed)
+    {
+        attackTimer = 0;
+        float angle = currentAngle;  // L'angle de tir du joueur
+        float speed = 400.f;  // Vitesse du projectile
+        sf::Color color = sf::Color::Green;  // Couleur du projectile
 
-    // Créer un nouveau projectile à la position actuelle du joueur
-    projectiles.push_back(Projectile(position.x, position.y, angle, speed, color));
+        // Créer un nouveau projectile à la position actuelle du joueur
+        projectiles.push_back(Projectile(position.x, position.y, angle, speed, color));
+    }
 }
 
-void Player::update(float deltaTime, RenderWindow& window) {
-
+void Player::update(float deltaTime, sf::RenderWindow& window, std::vector<Mob>& mobs) {
+    Player::attack(deltaTime);
     Player::move(deltaTime, window);
     Player::pivot(deltaTime, window);
+
+    // Mettre à jour les projectiles
+    for (auto it = projectiles.begin(); it != projectiles.end(); ) {
+        it->update(deltaTime);
+
+        // Vérifier la collision avec chaque mob
+        bool projectileHit = false;
+        for (auto& mob : mobs) {
+            if (it->checkCollision(mob.getBounds())) {
+                mob.takeDamage(10);  // Infliger des dégâts au mob
+                projectileHit = true;
+                break;
+            }
+        }
+
+        // Si le projectile a touché un mob, le retirer de la liste
+        if (projectileHit) {
+            it = projectiles.erase(it);  // Efface le projectile de la liste
+        }
+        else {
+            it->render(window);  // Sinon, afficher le projectile
+            ++it;  // Passer au prochain projectile
+        }
+    }
 }
+
 
 sf::Vector2f Player::getPosition() const {
     return position;

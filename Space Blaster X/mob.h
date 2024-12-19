@@ -1,6 +1,7 @@
 #pragma once
 #ifndef MOB_H
 #define MOB_H
+#include"projectile.h"
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
@@ -15,6 +16,9 @@ protected:
     sf::Vector2f velocity;
     float acceleration;
     float friction;
+    std::vector<Projectile> projectiles; 
+    float attackCooldown; 
+    float attackTimer; 
 
 public:
     Mob(float x, float y, int hp);
@@ -22,11 +26,11 @@ public:
 
     bool isalive();
     void move(int dx, int dy);
-    bool takedmg(int degat);
+    void takeDamage(int damage);
 
-    virtual void attack();
+    virtual void attack(sf::Vector2f playerPosition);
     virtual void update(float deltaTime, sf::Vector2f playerPosition, std::vector<Mob>& mobs, sf::RenderWindow& window);
-
+    sf::FloatRect getBounds() const;
     sf::CircleShape ship;
 
 };

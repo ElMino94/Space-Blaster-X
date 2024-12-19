@@ -3,6 +3,9 @@
 
 // Constructeur qui initialise les variables du Mob
 Mob::Mob(float x, float y, int hp) : position(x, y), pv(hp), velocity(0, 0), acceleration(3500.f), friction(0.975f) {
+
+    attackCooldown = 1; // Timer pour limiter la fréquence d'attaque
+    attackTimer = 0; // Temps écoulé depuis la dernière attaque
     // Initialisation du cercle représentant le vaisseau
     ship.setRadius(20.f);  // Rayon du vaisseau
     ship.setFillColor(sf::Color::Red);  // Couleur du vaisseau
@@ -23,18 +26,30 @@ void Mob::move(int dx, int dy) {
 }
 
 // Applique des dégâts au Mob et retourne si le Mob est toujours en vie
-bool Mob::takedmg(int degat) {
-    pv -= degat;
-    if (pv <= 0) {
-        pv = 0;
-        return false;  // Le Mob est mort
-    }
-    return true;  // Le Mob reste en vie
+void Mob::takeDamage(int damage) {
+    pv -= damage;
 }
 
 // Fonction d'attaque (pas utilisée ici)
-void Mob::attack() {
-    // La fonction est vide pour l'instant
+void Mob::attack(sf::Vector2f playerPosition) {
+    
+    if (attackTimer >= attackCooldown) {
+        // Calculer la direction du tir vers le joueur
+        sf::Vector2f direction = playerPosition - position;
+        float distance = std::sqrt(direction.x * direction.x + direction.y * direction.y);
+        if (distance != 0) {
+            direction /= distance; // Normaliser la direction
+        }
+
+        // Angle du tir en degrés
+        float angle = std::atan2(direction.y, direction.x) * 180.f / 3.14159f;
+
+        // Ajouter un projectile
+        projectiles.push_back(Projectile(position.x, position.y, angle, 300.f, sf::Color::Yellow));
+
+        // Réinitialiser le timer d'attaque
+        attackTimer = 0.f;
+    }
 }
 
 // Mise à jour du Mob à chaque frame
@@ -106,7 +121,23 @@ void Mob::update(float deltaTime, sf::Vector2f playerPosition, std::vector<Mob>&
             }
         }
     }
+    for (auto it = projectiles.begin(); it != projectiles.end();) {
+        it->update(deltaTime);
+        it->render(window);
 
+        // Supprimez les projectiles qui sortent des limites de la fenêtre
+        if (it->isOutOfBounds(window)) {
+            it = projectiles.erase(it);
+        }
+        else {
+            ++it;
+        }
+    }
+    attackTimer += deltaTime;
+    attack(playerPosition);
     // Met à jour la position du sprite du Mob
     ship.setPosition(position);
+}
+sf::FloatRect Mob::getBounds() const {
+    return ship.getGlobalBounds();
 }

@@ -25,6 +25,7 @@ public:
     void update(float deltaTime);
     void render(sf::RenderWindow& window);
     bool isOutOfBounds(sf::RenderWindow& window);  // Vérifie si le projectile est hors de l'écran
+    bool checkCollision(const sf::FloatRect& mobBounds);
 
 
 };

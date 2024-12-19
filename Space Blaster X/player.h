@@ -1,6 +1,9 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include"projectile.h"
+
+#include"mob.h"
+
 #include <vector>
 #include <iostream>
 #include <SFML/Graphics.hpp>
@@ -18,7 +21,8 @@ private:
     Vector2f velocity;
     float acceleration;
     float friction;
-    int attaquespeed;
+    float attaquespeed;
+    float attackTimer;
     float currentAngle;  
     float rotationSpeed;
     std::vector<Projectile> projectiles;
@@ -36,8 +40,8 @@ public:
     void pivot(float deltaTime, RenderWindow& window);
     bool takedmg(int degat);
 
-    void attack();
-    void update(float deltaTime, RenderWindow& window);
+    void attack(float deltaTime);
+    void update(float deltaTime, RenderWindow& window, std::vector<Mob>& mobs);
 
     
 };

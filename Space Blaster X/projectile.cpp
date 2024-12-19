@@ -11,22 +11,13 @@ Projectile::Projectile(float x, float y, float angle, float speed, sf::Color col
 }
 
 void Projectile::update(float deltaTime) {
-    // Si le projectile doit encore attendre avant de commencer à se déplacer
-    if (!isMoving) {
-        timer += deltaTime;
-        if (timer >= 0.5f) {
-            isMoving = true;  // Le projectile commence à se déplacer après 0.5s
-        }
-    }
+ 
+    float radianAngle = angle * 3.14159f / 180.f;  // Convertir l'angle en radians
+    position.x += std::cos(radianAngle) * speed * deltaTime;  // Déplacement horizontal
+    position.y += std::sin(radianAngle) * speed * deltaTime;  // Déplacement vertical
 
-    // Si le projectile est en mouvement, on met à jour sa position
-    if (isMoving) {
-        float radianAngle = angle * 3.14159f / 180.f;  // Convertir l'angle en radians
-        position.x += std::cos(radianAngle) * speed * deltaTime;  // Déplacement horizontal
-        position.y += std::sin(radianAngle) * speed * deltaTime;  // Déplacement vertical
-
-        shape.setPosition(position);  // Mettre à jour la position du projectile
-    }
+    shape.setPosition(position);  // Mettre à jour la position du projectile
+    
 }
 
 void Projectile::render(sf::RenderWindow& window) {
@@ -39,4 +30,7 @@ bool Projectile::isOutOfBounds(sf::RenderWindow& window) {
 
     // Vérifier si le projectile est hors des limites de la fenêtre
     return bounds.left < 0 || bounds.top < 0 || bounds.left + bounds.width > windowSize.x || bounds.top + bounds.height > windowSize.y;
+}
+bool Projectile::checkCollision(const sf::FloatRect& mobBounds) {
+    return shape.getGlobalBounds().intersects(mobBounds);
 }
