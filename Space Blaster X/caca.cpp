@@ -23,7 +23,7 @@ void playlevel(RenderWindow& window, Player& player, float deltaTime, Clock& mob
     float spawnTime = mobSpawnClock.getElapsedTime().asSeconds();
     float totalLevelTime = levelClock.getElapsedTime().asSeconds();
 
-    // Générer un mob toutes les 2 secondes pendant les 40 premières secondes
+   
     if (totalLevelTime <= 41.0f && spawnTime >= 2.0f) {
         mobs.push_back(Mob(400, 400, 100, texture)); // Ajoutez votre logique de création de mob
         mobSpawnClock.restart();
@@ -60,7 +60,7 @@ void playlevel(RenderWindow& window, Player& player, float deltaTime, Clock& mob
 }
 
 void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& currentState, Event& event, float deltaTime, Clock& mobSpawnClock, Clock& levelClock, Texture& texture) {
-
+    static bool escapePressed = false;
     Vector2f mousePos;
 
     if (event.type == Event::MouseButtonPressed) {
@@ -90,15 +90,25 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
         }
     }
 
-    if (Keyboard::isKeyPressed(Keyboard::Escape)) {
-        // Si on est en mode jeu, basculer en pause
-        if (currentState == PLAY) {
-            currentState = PAUSE; // Passe au menu de pause
+    
+    if (event.type == Event::KeyPressed && event.key.code == Keyboard::Escape) {
+        if (!escapePressed) {  
+            escapePressed = true;  
+
+            
+            if (currentState == PLAY) {
+                currentState = PAUSE;
+            }
+            
+            else if (currentState == PAUSE) {
+                currentState = PLAY;
+            }
         }
-        // Si on est en pause, basculer en mode jeu
-        else if (currentState == PAUSE) {
-            currentState = PLAY; // Reprendre le jeu
-        }
+    }
+
+    
+    if (event.type == Event::KeyReleased && event.key.code == Keyboard::Escape) {
+        escapePressed = false;  
     }
 
     switch (currentState) {
@@ -118,6 +128,9 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
         break;
 
     case PAUSE:
+        if (Keyboard::isKeyPressed(Keyboard::Escape)) {
+            currentState = PLAY;
+        }
         menu.drawPauseMenu(window);   
         break;
 
@@ -143,12 +156,12 @@ int main()
     Texture texture;
     if (!texture.loadFromFile("assetocorsa//ship.png")) {
         cerr << "Erreur : Impossible de charger la texture." << endl;
-        return -1; // Terminez le programme si la texture ne se charge pas
+        return -1; 
     }    Player player(400.f, 300.f);
     
     Clock clock;
-    Clock mobSpawnClock; // Horloge pour gérer l'apparition des mobs
-    Clock levelClock;    // Horloge pour le temps total du niveau
+    Clock mobSpawnClock; 
+    Clock levelClock;    
 
     GameState currentState = MODMENU;
 
@@ -163,15 +176,8 @@ int main()
                 window.close();
         }
         if (Keyboard::isKeyPressed(Keyboard::M))window.close();
-        window.clear();
-        if (Keyboard::isKeyPressed(Keyboard::Escape)) {
-            if (currentState == PLAY) {
-                currentState = PAUSE;
-            }
-            else if (currentState == PAUSE) {
-                currentState = PLAY;
-            }
-        }
+        
+        
         window.clear();
         selmenu(window, player, menu, currentState, event, deltaTime.asSeconds(), mobSpawnClock, levelClock, texture);
         window.display();

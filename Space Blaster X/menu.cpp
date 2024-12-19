@@ -88,7 +88,7 @@ void MENU::drawSettings(RenderWindow& window) {
     window.draw(settingsText);
 }
 
-// Affiche un  cran de confirmation pour quitter
+// Affiche un ecran de confirmation pour quitter
 void MENU::drawExitConfirmation(RenderWindow& window) {
     window.draw(backgroundSprite);
 
@@ -102,6 +102,7 @@ void MENU::drawExitConfirmation(RenderWindow& window) {
     window.draw(exitText);
 }
 
+// Affiche les backgrounds des lvl
 void MENU::drawplay(RenderWindow& window, int level) {
 
     if (level == 1) {
@@ -118,6 +119,7 @@ void MENU::drawplay(RenderWindow& window, int level) {
 
 }
 
+// Affiche le menu de pause
 void MENU::drawPauseMenu(RenderWindow& window) {
 
     window.draw(backgroundSprite);
