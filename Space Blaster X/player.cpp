@@ -128,7 +128,7 @@ void Player::update(float deltaTime, sf::RenderWindow& window, std::vector<Mob>&
         bool projectileHit = false;
         for (auto& mob : mobs) {
             if (it->checkCollision(mob.getBounds())) {
-                mob.takeDamage(10);  // Infliger des dégâts au mob
+                mob.takeDamage(100);  // Infliger des dégâts au mob
                 projectileHit = true;
                 break;
             }
@@ -141,6 +141,16 @@ void Player::update(float deltaTime, sf::RenderWindow& window, std::vector<Mob>&
         else {
             it->render(window);  // Sinon, afficher le projectile
             ++it;  // Passer au prochain projectile
+        }
+    }
+
+    for (auto it = mobs.begin(); it != mobs.end();) {
+        // Vérifiez si le mob est mort
+        if (it->isalive() == false) {
+            it = mobs.erase(it); // Supprimez le mob mort et obtenez un nouvel itérateur valide
+        }
+        else {
+            ++it; // Passez au mob suivant
         }
     }
 }
