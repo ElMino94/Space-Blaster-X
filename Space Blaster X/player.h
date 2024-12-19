@@ -29,6 +29,8 @@ private:
     int score;
     float maxSpeed;
 
+    RectangleShape healthBar;
+
 public:
 
     int pv;
@@ -47,6 +49,8 @@ public:
     FloatRect getBounds() const;
     int getscore() const;
 
+    void drawHealthBar(RenderWindow& window);  
+    void takeDamageFromProjectile(int damage);  
 };
 
 #endif

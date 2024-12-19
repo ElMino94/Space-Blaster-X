@@ -21,6 +21,10 @@ Player::Player(float x, float y) {
     pSprite.setTexture(pTexture);
     pSprite.setScale(Vector2f(0.225, 0.225));
     pSprite.setOrigin(pTexture.getSize().x / 2.f, pTexture.getSize().y / 2.f);
+
+    healthBar.setSize(Vector2f(100, 10));
+    healthBar.setFillColor(Color::Green);
+    healthBar.setPosition(x, y - 20);
 }
 
 void Player::move(float deltaTime, RenderWindow& window) {
@@ -128,7 +132,7 @@ void Player::update(float deltaTime, sf::RenderWindow& window, std::vector<Mob>&
     Player::move(deltaTime, window);
     Player::pivot(deltaTime, window);
 
-    // Mettre   jour les projectiles
+    
     for (auto it = projectiles.begin(); it != projectiles.end(); ) {
         it->update(deltaTime);
 
@@ -165,6 +169,26 @@ void Player::update(float deltaTime, sf::RenderWindow& window, std::vector<Mob>&
     }
 }
 
+void Player::drawHealthBar(RenderWindow& window) {
+    float healthRatio = pv / 100.f;  // Proportion de la vie restante (le joueur commence avec 100 points de vie)
+
+    // Ajuster la taille de la barre de vie en fonction de la vie restante
+    healthBar.setSize(Vector2f(100 * healthRatio, 10));
+
+    // Changer la couleur de la barre de vie
+    if (healthRatio > 0.6f) {
+        healthBar.setFillColor(Color::Green);
+    }
+    else if (healthRatio > 0.3f) {
+        healthBar.setFillColor(Color::Yellow);
+    }
+    else {
+        healthBar.setFillColor(Color::Red);
+    }
+
+    // Dessiner la barre de vie au-dessus du joueur
+    window.draw(healthBar);
+}
 
 Vector2f Player::getPosition() const {
     return position;

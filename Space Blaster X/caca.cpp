@@ -124,7 +124,7 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
             }
 
             else if (currentState == PAUSE) {
-                if (menu.playSprite.getGlobalBounds().contains(mousePos)) {
+                if (menu.returnSprite.getGlobalBounds().contains(mousePos)) {
                     currentState = PLAY;
                 }
                 else if (menu.exitSprite.getGlobalBounds().contains(mousePos)) {
