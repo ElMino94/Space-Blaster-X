@@ -10,7 +10,7 @@
 #include <SFML/Window.hpp>
 using namespace sf;
 using namespace std;
-
+class Mob;
 class Player
 {
 private:
@@ -42,7 +42,7 @@ public:
 
     void attack(float deltaTime);
     void update(float deltaTime, RenderWindow& window, std::vector<Mob>& mobs);
-
+    FloatRect getBounds() const;
     
 };
 

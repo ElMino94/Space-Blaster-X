@@ -55,7 +55,7 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
     case PLAY:
         for (auto& mob : mobs)
         {
-            mob.update(deltaTime, player.getPosition(), mobs, window);
+            mob.update(deltaTime, player.getPosition(), mobs, window, player);
             window.draw(mob.ship);
         }
         player.update(deltaTime, window, mobs);

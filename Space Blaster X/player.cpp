@@ -127,7 +127,7 @@ void Player::update(float deltaTime, sf::RenderWindow& window, std::vector<Mob>&
         // Vérifier la collision avec chaque mob
         bool projectileHit = false;
         for (auto& mob : mobs) {
-            if (it->checkCollision(mob.getBounds())) {
+            if (it->checkCollisionE(mob.getBounds())) {
                 mob.takeDamage(100);  // Infliger des dégâts au mob
                 projectileHit = true;
                 break;
@@ -156,6 +156,10 @@ void Player::update(float deltaTime, sf::RenderWindow& window, std::vector<Mob>&
 }
 
 
-sf::Vector2f Player::getPosition() const {
+Vector2f Player::getPosition() const {
     return position;
+}
+
+FloatRect Player::getBounds() const {
+    return pSprite.getGlobalBounds();
 }

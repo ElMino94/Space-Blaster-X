@@ -31,6 +31,9 @@ bool Projectile::isOutOfBounds(sf::RenderWindow& window) {
     // Vérifier si le projectile est hors des limites de la fenêtre
     return bounds.left < 0 || bounds.top < 0 || bounds.left + bounds.width > windowSize.x || bounds.top + bounds.height > windowSize.y;
 }
-bool Projectile::checkCollision(const sf::FloatRect& mobBounds) {
+bool Projectile::checkCollisionE(const sf::FloatRect& mobBounds) {
     return shape.getGlobalBounds().intersects(mobBounds);
+}
+bool Projectile::checkCollisionP(const sf::FloatRect& playerBounds) {
+    return shape.getGlobalBounds().intersects(playerBounds);
 }

@@ -53,7 +53,7 @@ void Mob::attack(sf::Vector2f playerPosition) {
 }
 
 // Mise à jour du Mob à chaque frame
-void Mob::update(float deltaTime, sf::Vector2f playerPosition, std::vector<Mob>& mobs, sf::RenderWindow& window) {
+void Mob::update(float deltaTime, sf::Vector2f playerPosition, std::vector<Mob>& mobs, sf::RenderWindow& window, Player& player) {
     // Calcul de la distance entre le Mob et le joueur
     float distance = std::sqrt(std::pow(playerPosition.x - position.x, 2) + std::pow(playerPosition.y - position.y, 2));
 
@@ -121,23 +121,31 @@ void Mob::update(float deltaTime, sf::Vector2f playerPosition, std::vector<Mob>&
             }
         }
     }
-    for (auto it = projectiles.begin(); it != projectiles.end();) {
+    for (auto it = projectiles.begin(); it != projectiles.end(); ) {
         it->update(deltaTime);
         it->render(window);
 
-        // Supprimez les projectiles qui sortent des limites de la fenêtre
-        if (it->isOutOfBounds(window)) {
-            it = projectiles.erase(it);
+        // Vérifier si le projectile touche le joueur
+        if (it->checkCollisionP(player.getBounds())) {
+            player.takedmg(34);  // Infliger des dégâts au joueur (ajuste la valeur de dégâts si nécessaire)
+            it = projectiles.erase(it);  // Supprimer le projectile de la liste
         }
         else {
-            ++it;
+            // Supprimer les projectiles qui sortent des limites de la fenêtre
+            if (it->isOutOfBounds(window)) {
+                it = projectiles.erase(it);
+            }
+            else {
+                ++it;  // Passer au prochain projectile
+            }
         }
     }
-    attackTimer += deltaTime;
-    attack(playerPosition);
-    // Met à jour la position du sprite du Mob
-    ship.setPosition(position);
+        attackTimer += deltaTime;
+        attack(playerPosition);
+        // Met à jour la position du sprite du Mob
+        ship.setPosition(position);
 }
+
 sf::FloatRect Mob::getBounds() const {
     return ship.getGlobalBounds();
 }
