@@ -49,7 +49,7 @@ void Mob::attack(sf::Vector2f playerPosition) {
         float angle = std::atan2(direction.y, direction.x) * 180.f / 3.14159f;
 
         // Ajouter un projectile
-        projectiles.push_back(Projectile(position.x, position.y, angle, 300.f, sf::Color::Yellow));
+        projectiles.push_back(Projectile(position.x, position.y, angle, 800, sf::Color::Yellow));
 
         // Réinitialiser le timer d'attaque
         attackTimer = 0.f;

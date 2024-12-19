@@ -1,10 +1,10 @@
 ﻿  player.cpp
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\player.cpp(21,38): warning C4305: 'argument' : troncation de 'double' à 'T'
+C:\Users\tgoncalves\Documents\GitHub\Space-Blaster-X\Space Blaster X\player.cpp(21,38): warning C4305: 'argument' : troncation de 'double' à 'T'
           with
           [
               T=float
           ]
-C:\Users\trestoux\source\repos\Space Blaster X\Space Blaster X\player.cpp(21,31): warning C4305: 'argument' : troncation de 'double' à 'T'
+C:\Users\tgoncalves\Documents\GitHub\Space-Blaster-X\Space Blaster X\player.cpp(21,31): warning C4305: 'argument' : troncation de 'double' à 'T'
           with
           [
               T=float
@@ -15,4 +15,4 @@ x64\Release\player.obj : warning LNK4042: objet spécifié plus d'une fois ; d�
     0 functions were new in current compilation
     1 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
-  Space Blaster X.vcxproj -> C:\Users\trestoux\source\repos\Space Blaster X\x64\Release\Space Blaster X.exe
+  Space Blaster X.vcxproj -> C:\Users\tgoncalves\Documents\GitHub\Space-Blaster-X\x64\Release\Space Blaster X.exe

@@ -5,8 +5,8 @@ using namespace std;
 Player::Player(float x, float y){
     position = sf::Vector2f(x, y);
     velocity = sf::Vector2f(0.f, 0.f);
-    acceleration = 500.f; 
-    friction = 0.975f; 
+    acceleration = 2500.f; 
+    friction = 0.98f; 
     invincible = false;
     pv = 100;
     attaquespeed = 0.5;
@@ -14,7 +14,7 @@ Player::Player(float x, float y){
     currentAngle = 0.f;  
     rotationSpeed = 3.f;
     score = 0;
-    maxSpeed = 500.f;
+    maxSpeed = 1000.f;
 
     pTexture.loadFromFile("assetocorsa\\player.png");
     pSprite.setTexture(pTexture);
@@ -114,7 +114,7 @@ void Player::attack(float deltaTime) {
     {
         attackTimer = 0;
         float angle = currentAngle;  // L'angle de tir du joueur
-        float speed = 400.f;  // Vitesse du projectile
+        float speed = 1000;  // Vitesse du projectile
         sf::Color color = sf::Color::Green;  // Couleur du projectile
 
         // Créer un nouveau projectile à la position actuelle du joueur

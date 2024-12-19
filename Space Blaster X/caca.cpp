@@ -42,12 +42,7 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
         }
     }
 
-    if (event.type == Event::KeyPressed) {
-        if (event.key.code == Keyboard::Escape) {
-            currentState = EXIT;
-        }
-    }
-
+    
     switch (currentState) {
     case MODMENU:
         menu.drawMainMenu(window);
@@ -83,7 +78,7 @@ int main()
 {
     
     RenderWindow window(VideoMode(1920, 1080), "Space Blaster X", Style::None);
-    window.setFramerateLimit(60);
+    window.setFramerateLimit(120);
 
     MENU menu; 
     menu.initialisation();
@@ -115,20 +110,12 @@ int main()
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed)
                 window.close();
-
-            if (event.type == Event::KeyPressed) {
-                if (event.key.code == Keyboard::Escape)
-                    window.close();
-
-                selmenu(window, player, menu, currentState, event, deltaTime.asSeconds());
-                                
-            }
         }
+        if (Keyboard::isKeyPressed(Keyboard::Escape))window.close();
+
 
         window.clear();
-
         selmenu(window, player, menu, currentState, event, deltaTime.asSeconds());
-
         window.display();
     }
 

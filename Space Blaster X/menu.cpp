@@ -6,6 +6,10 @@ using namespace std;
 // Appel automatique pour charger textures/polices
 MENU::MENU() {
     initialisation(); 
+    lvl1Texture.loadFromFile("assetocorsa\\lvl1.jpg");
+    lvl1Sprite.setTexture(lvl1Texture);
+
+
 }
 
 // Méthode pour initialiser les textures, polices et sprites
@@ -97,10 +101,8 @@ void MENU::drawplay(RenderWindow& window, int level) {
     
     
     if (level == 1)  {
-        backgroundTexture.loadFromFile("assetocorsa\\backgroung.jpg");
-        backgroundSprite.setTexture(backgroundTexture);
-        window.draw(backgroundSprite);
-    }/*
+        window.draw(lvl1Sprite);
+    }
     else if (level == 2)  {
         lvl2Texture.loadFromFile("assetocorsa\\lvl2.jpg");
         lvl2Sprite.setTexture(lvl2Texture);
@@ -110,6 +112,6 @@ void MENU::drawplay(RenderWindow& window, int level) {
         lvl3Texture.loadFromFile("assetocorsa\\lvl3.png");
         lvl3Sprite.setTexture(lvl3Texture);
         window.draw(lvl1Sprite);
-    }*/
+    }
 
 }
