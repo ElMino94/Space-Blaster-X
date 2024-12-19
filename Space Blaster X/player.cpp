@@ -2,22 +2,24 @@
 using namespace sf;
 using namespace std;
 
-Player::Player(float x, float y){
+Player::Player(float x, float y) {
     position = sf::Vector2f(x, y);
     velocity = sf::Vector2f(0.f, 0.f);
-    acceleration = 3500.f; 
-    friction = 0.975f; 
+    acceleration = 2500.f;
+    friction = 0.98f;
     invincible = false;
     pv = 100;
     attaquespeed = 0.5;
     attackTimer = 0.f;
-    currentAngle = 0.f;  
+    currentAngle = 0.f;
     rotationSpeed = 3.f;
+    score = 0;
 
+    maxSpeed = 1000.f;
 
     pTexture.loadFromFile("assetocorsa\\player.png");
     pSprite.setTexture(pTexture);
-    pSprite.setScale(Vector2f(0.5, 0.5));
+    pSprite.setScale(Vector2f(0.225, 0.225));
     pSprite.setOrigin(pTexture.getSize().x / 2.f, pTexture.getSize().y / 2.f);
 }
 
@@ -40,6 +42,12 @@ void Player::move(float deltaTime, RenderWindow& window) {
 
     velocity += direction * acceleration * deltaTime;
     velocity *= friction;
+
+    float speed = sqrt(velocity.x * velocity.x + velocity.y * velocity.y);
+    if (speed > maxSpeed) {
+        velocity = (velocity / speed) * maxSpeed; // Normaliser et appliquer la vitesse max
+    }
+
     position += velocity * deltaTime;
 
     Vector2u windowSize = window.getSize();
@@ -77,13 +85,13 @@ void Player::pivot(float deltaTime, RenderWindow& window) {
         angleDifference += 360.f;
     }
 
-    if (abs(angleDifference) > 0.1f) {  
-        currentAngle += angleDifference * rotationSpeed * deltaTime;  
+    if (abs(angleDifference) > 0.1f) {
+        currentAngle += angleDifference * rotationSpeed * deltaTime;
     }
     else {
-        currentAngle = targetAngle;  
+        currentAngle = targetAngle;
     }
-    pSprite.setRotation(currentAngle+90);
+    pSprite.setRotation(currentAngle + 90);
 
 }
 bool Player::takedmg(int degat) {
@@ -107,10 +115,10 @@ void Player::attack(float deltaTime) {
     {
         attackTimer = 0;
         float angle = currentAngle;  // L'angle de tir du joueur
-        float speed = 400.f;  // Vitesse du projectile
+        float speed = 1000;  // Vitesse du projectile
         sf::Color color = sf::Color::Green;  // Couleur du projectile
 
-        // Créer un nouveau projectile à la position actuelle du joueur
+        // Cr er un nouveau projectile   la position actuelle du joueur
         projectiles.push_back(Projectile(position.x, position.y, angle, speed, color));
     }
 }
@@ -120,21 +128,23 @@ void Player::update(float deltaTime, sf::RenderWindow& window, std::vector<Mob>&
     Player::move(deltaTime, window);
     Player::pivot(deltaTime, window);
 
-    // Mettre à jour les projectiles
+    // Mettre   jour les projectiles
     for (auto it = projectiles.begin(); it != projectiles.end(); ) {
         it->update(deltaTime);
 
-        // Vérifier la collision avec chaque mob
+        // V rifier la collision avec chaque mob
         bool projectileHit = false;
         for (auto& mob : mobs) {
             if (it->checkCollisionE(mob.getBounds())) {
-                mob.takeDamage(100);  // Infliger des dégâts au mob
+                mob.takeDamage(100);  // Infliger des d g ts au mob
                 projectileHit = true;
+                score += 100;
+                cout << score;
                 break;
             }
         }
 
-        // Si le projectile a touché un mob, le retirer de la liste
+        // Si le projectile a touch  un mob, le retirer de la liste
         if (projectileHit) {
             it = projectiles.erase(it);  // Efface le projectile de la liste
         }
@@ -145,9 +155,9 @@ void Player::update(float deltaTime, sf::RenderWindow& window, std::vector<Mob>&
     }
 
     for (auto it = mobs.begin(); it != mobs.end();) {
-        // Vérifiez si le mob est mort
+        // V rifiez si le mob est mort
         if (it->isalive() == false) {
-            it = mobs.erase(it); // Supprimez le mob mort et obtenez un nouvel itérateur valide
+            it = mobs.erase(it); // Supprimez le mob mort et obtenez un nouvel it rateur valide
         }
         else {
             ++it; // Passez au mob suivant
@@ -162,4 +172,7 @@ Vector2f Player::getPosition() const {
 
 FloatRect Player::getBounds() const {
     return pSprite.getGlobalBounds();
+}
+int Player::getscore() const {
+    return score;
 }

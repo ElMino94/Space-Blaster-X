@@ -5,18 +5,20 @@ using namespace std;
 
 // Appel automatique pour charger textures/polices
 MENU::MENU() {
-    initialisation(); 
+    initialisation();
+    lvl1Texture.loadFromFile("assetocorsa\\lvl1.jpg");
+    lvl1Sprite.setTexture(lvl1Texture);
 }
 
-// Méthode pour initialiser les textures, polices et sprites
+// M thode pour initialiser les textures, polices et sprites
 void MENU::initialisation() {
-    
+
 
     backgroundTexture.loadFromFile("assetocorsa\\background.jpg");
     if (!backgroundTexture.loadFromFile("assetocorsa\\background.jpg"))
         cerr << "Erreur : Impossible de charger l'image de fond !" << endl;
 
-    
+
     if (!playTexture.loadFromFile("assetocorsa\\bp.png"))
         cerr << "Erreur : Impossible de charger play.png !" << endl;
 
@@ -41,7 +43,7 @@ void MENU::initialisation() {
     exitSprite.setTexture(exitTexture);
     exitSprite.setPosition(50, 500);
 
-    
+
     if (!font.loadFromFile("assetocorsa\\Neon Energy x.ttf")) {
         cerr << "Erreur : Impossible de charger la police !" << endl;
         return;
@@ -64,7 +66,7 @@ void MENU::drawMainMenu(RenderWindow& window) {
     window.draw(exitSprite);
 }
 
-// Affiche le menu des paramètres
+// Affiche le menu des param tres
 void MENU::drawSettings(RenderWindow& window) {
     window.draw(backgroundSprite);
 
@@ -78,7 +80,7 @@ void MENU::drawSettings(RenderWindow& window) {
     window.draw(settingsText);
 }
 
-// Affiche un écran de confirmation pour quitter
+// Affiche un  cran de confirmation pour quitter
 void MENU::drawExitConfirmation(RenderWindow& window) {
     window.draw(backgroundSprite);
 
@@ -90,4 +92,24 @@ void MENU::drawExitConfirmation(RenderWindow& window) {
     exitText.setPosition(50, 300);
 
     window.draw(exitText);
+}
+
+void MENU::drawplay(RenderWindow& window, int level) {
+
+
+
+    if (level == 1) {
+        window.draw(lvl1Sprite);
+    }
+    else if (level == 2) {
+        lvl2Texture.loadFromFile("assetocorsa\\lvl2.jpg");
+        lvl2Sprite.setTexture(lvl2Texture);
+        window.draw(lvl1Sprite);
+    }
+    else if (level == 3) {
+        lvl3Texture.loadFromFile("assetocorsa\\lvl3.png");
+        lvl3Sprite.setTexture(lvl3Texture);
+        window.draw(lvl1Sprite);
+    }
+
 }

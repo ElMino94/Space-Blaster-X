@@ -12,11 +12,14 @@ public:
 
     MENU(); // Constructeur
 
-    // Méthodes pour initialiser et dessiner différents écrans du menu
+    // M thodes pour initialiser et dessiner diff rents  crans du menu
     void initialisation();       // Charger les textures, polices et positions
     void drawMainMenu(RenderWindow& window); // Affiche le menu principal
-    void drawSettings(RenderWindow& window); // Affiche le menu des paramètres
+    void drawSettings(RenderWindow& window); // Affiche le menu des param tres
     void drawExitConfirmation(RenderWindow& window); // Affiche un menu de confirmation de sortie
+    void drawplay(RenderWindow& window, int level); // Afficher lorque que le jeu ce lance
+
+
 
     Texture backgroundTexture;
     Sprite backgroundSprite;
@@ -29,6 +32,15 @@ public:
 
     Texture exitTexture;
     Sprite exitSprite;
+
+    Texture lvl1Texture;
+    Sprite lvl1Sprite;
+
+    Texture lvl2Texture;
+    Sprite lvl2Sprite;
+
+    Texture lvl3Texture;
+    Sprite lvl3Sprite;
 
     Font font;
     Text titleText;

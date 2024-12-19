@@ -9,10 +9,11 @@ using namespace std;
 using namespace sf;
 
 void cursor() {
-    
+
 }
 
 vector<Mob> mobs;
+int level = 1;
 //vector<Projectile> projectiles
 enum GameState { MODMENU, PLAY, SETTINGS, EXIT };
 
@@ -41,22 +42,17 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
         }
     }
 
-    if (event.type == Event::KeyPressed) {
-        if (event.key.code == Keyboard::Escape) {
-            currentState = EXIT;
-        }
-    }
-
     switch (currentState) {
     case MODMENU:
         menu.drawMainMenu(window);
         break;
 
     case PLAY:
+        menu.drawplay(window, level);
         for (auto& mob : mobs)
         {
             mob.update(deltaTime, player.getPosition(), mobs, window, player);
-            window.draw(mob.ship);
+            window.draw(mob.shipSprite);
         }
         player.update(deltaTime, window, mobs);
         window.draw(player.pSprite);
@@ -79,53 +75,43 @@ void selmenu(RenderWindow& window, Player& player, MENU& menu, GameState& curren
 
 int main()
 {
-    
+
     RenderWindow window(VideoMode(1920, 1080), "Space Blaster X", Style::None);
     window.setFramerateLimit(120);
 
-    MENU menu; 
+    MENU menu;
     menu.initialisation();
+    Texture texture;
 
     Player player(400.f, 300.f);
-    mobs.push_back(Mob(200.f, 400.f, 100));
-    mobs.push_back(Mob(300.f, 400.f, 100));
-    mobs.push_back(Mob(400.f, 400.f, 100));
-    mobs.push_back(Mob(500.f, 400.f, 100));
-    mobs.push_back(Mob(600.f, 400.f, 100));
+    mobs.push_back(Mob(200.f, 400.f, 100, texture));
+    mobs.push_back(Mob(300.f, 400.f, 100, texture));
+    mobs.push_back(Mob(400.f, 400.f, 100, texture));
+    mobs.push_back(Mob(500.f, 400.f, 100, texture));
+    mobs.push_back(Mob(000.f, 400.f, 100, texture));
+    mobs.push_back(Mob(500.f, 400.f, 100, texture));
+    mobs.push_back(Mob(500.f, 400.f, 100, texture));
+    mobs.push_back(Mob(800.f, 400.f, 100, texture));
+    mobs.push_back(Mob(600.f, 400.f, 100, texture));
     Clock clock;
 
-    Texture pTexture;
-    pTexture.loadFromFile("assetocorsa\\player.png");
-    player.pSprite.setTexture(pTexture);
 
-    
-    
-    // Gestion des états du jeu
+
     GameState currentState = MODMENU;
 
     while (window.isOpen()) {
         Time deltaTime = clock.restart();
         Event event;
 
+        texture.loadFromFile("assetocorsa//ship.png");
+
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed)
                 window.close();
-
-            if (event.type == Event::KeyPressed) {
-                if (event.key.code == Keyboard::Escape)
-                    window.close();
-
-                selmenu(window, player, menu, currentState, event, deltaTime.asSeconds());
-                                
-            }
         }
-
+        if (Keyboard::isKeyPressed(Keyboard::Escape))window.close();
         window.clear();
-
         selmenu(window, player, menu, currentState, event, deltaTime.asSeconds());
 
         window.display();
     }
-
-        return 0;
-}

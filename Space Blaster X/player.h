@@ -23,9 +23,11 @@ private:
     float friction;
     float attaquespeed;
     float attackTimer;
-    float currentAngle;  
+    float currentAngle;
     float rotationSpeed;
     std::vector<Projectile> projectiles;
+    int score;
+    float maxSpeed;
 
 public:
 
@@ -34,7 +36,7 @@ public:
     Sprite pSprite;
     Player(float x, float y);
     ~Player() = default;
-    Vector2f getPosition() const ;
+    Vector2f getPosition() const;
     bool isalive();
     void move(float deltaTime, RenderWindow& window);
     void pivot(float deltaTime, RenderWindow& window);
@@ -43,9 +45,8 @@ public:
     void attack(float deltaTime);
     void update(float deltaTime, RenderWindow& window, std::vector<Mob>& mobs);
     FloatRect getBounds() const;
-    
+    int getscore() const;
+
 };
-
-
 
 #endif

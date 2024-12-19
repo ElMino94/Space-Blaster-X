@@ -17,12 +17,15 @@ protected:
     sf::Vector2f velocity;
     float acceleration;
     float friction;
-    std::vector<Projectile> projectiles; 
-    float attackCooldown; 
-    float attackTimer; 
+    std::vector<Projectile> projectiles;
+    float attackCooldown;
+    float attackTimer;
 
 public:
-    Mob(float x, float y, int hp);
+    Texture texture;
+    Sprite shipSprite;
+
+    Mob(float x, float y, int hp, Texture texture);
     ~Mob() = default;
 
     bool isalive();
